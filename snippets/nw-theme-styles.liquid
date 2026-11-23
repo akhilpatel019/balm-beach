@@ -1,0 +1,2571 @@
+{% doc %}
+NW brand tokens, font overrides, and self-hosted `@font-face` rules for 
+Ambroise Std Francois, Lovelo, and Owners Wide. Render in the head.
+{% enddoc %}
+
+{% style %}
+
+:root {
+  /* ===========================
+     Sun & Sand Colors
+  =========================== */
+  --nw-sunset-yellow: #FDAE0F;
+  --nw-sun-deep: #D78A15;
+  --nw-cream-soft: #F8F1DE;
+  --nw-cream: #F3E8D2;
+  --nw-cream-deep: #E4D7B1;
+
+  /* ===========================
+     Cool Anchors
+  =========================== */
+  --nw-bb-blue: #1E3A5F;
+  --nw-night: #13233E;
+  --nw-sky: #5795CE;
+
+  /* ===========================
+     Warm Espresso
+  =========================== */
+  --nw-espresso: #3A2418;
+  --nw-cocoa: #6B4427;
+  --nw-caramel: #C79459;
+  --nw-bone: #FCF7EB;
+  --nw-paper: #FFFEFA;
+
+  /* ===========================
+     Sun Balm
+  =========================== */
+  --nw-soft-balm: #FFEBC2;
+  --nw-bronze: #AE7445;
+  --nw-dark-balm: #5C413F;
+
+  /* ===========================
+     Black & White
+  =========================== */
+  --nw-black: #000000;
+  --nw-white: #FFFFFF;
+
+
+  /* ===========================
+     Reusable Color Variables
+  =========================== */
+  --sunset-yellow: var(--nw-sunset-yellow);
+  --sun-deep: var(--nw-sun-deep);
+  --cream-soft: var(--nw-cream-soft);
+  --cream: var(--nw-cream);
+  --cream-deep: var(--nw-cream-deep);
+
+  --bb-blue: var(--nw-bb-blue);
+  --night: var(--nw-night);
+  --sky: var(--nw-sky);
+
+  --espresso: var(--nw-espresso);
+  --cocoa: var(--nw-cocoa);
+  --caramel: var(--nw-caramel);
+  --bone: var(--nw-bone);
+  --paper: var(--nw-paper);
+
+  --soft-balm: var(--nw-soft-balm);
+  --bronze: var(--nw-bronze);
+  --dark-balm: var(--nw-dark-balm);
+
+  --black: var(--nw-black);
+  --white: var(--nw-white);
+
+
+     /* ===========================
+     font-families
+  =========================== */
+    --font-body-family: 'Owners Wide', sans-serif;
+  --font-accent-family: 'Ambroise Francois', serif;
+  --font-heading-family: 'Lovelo', sans-serif;    
+
+
+}
+
+  /* ===========================
+     Ambroise Francois
+  =========================== */
+  @font-face {
+    font-family: 'Ambroise Francois';
+    src: url('{{ "Ambroise Francois Regular.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ambroise Std Francois';
+    src: url('{{ "Ambroise Francois Regular.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ===========================
+     Lovelo (Solid Fill)
+  =========================== */
+  @font-face {
+    font-family: 'Lovelo';
+    src: url('{{ "Lovelo Black.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lovelo';
+    src: url('{{ "Lovelo Black.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lovelo';
+    src: url('{{ "Lovelo Black.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lovelo';
+    src: url('{{ "Lovelo Black.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lovelo Black';
+    src: url('{{ "Lovelo Black.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lovelo Black';
+    src: url('{{ "Lovelo Black.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lovelo Black';
+    src: url('{{ "Lovelo Black.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ===========================
+     Lovelo Line (Outline)
+  =========================== */
+  @font-face {
+    font-family: 'Lovelo Line';
+    src: url('{{ "Lovelo Line Bold.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lovelo Line Bold';
+    src: url('{{ "Lovelo Line Bold.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lovelo Line';
+    src: url('{{ "Lovelo Line Light.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Lovelo Line Light';
+    src: url('{{ "Lovelo Line Light.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ===========================
+     Owners (Normal)
+  =========================== */
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-Black-BF64361ef89adb0.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-Black-BF64361ef89adb0.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-Black-BF64361ef89adb0.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-BlackItalic-BF64361ef8aa584.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-BlackItalic-BF64361ef8aa584.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-BlackItalic-BF64361ef8aa584.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-Bold-BF64361ef8ad10f.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-Bold-BF64361ef8ad10f.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-Bold-BF64361ef8ad10f.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-BoldItalic-BF64361ef80490f.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-BoldItalic-BF64361ef80490f.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-BoldItalic-BF64361ef80490f.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-Light-BF64361ef833aae.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-Light-BF64361ef833aae.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-Light-BF64361ef833aae.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-LightItalic-BF64361ef820339.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-LightItalic-BF64361ef820339.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-LightItalic-BF64361ef820339.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-Medium-BF64361ef81f92b.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-Medium-BF64361ef81f92b.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-Medium-BF64361ef81f92b.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-MediumItalic-BF64361ef8678d8.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-MediumItalic-BF64361ef8678d8.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-MediumItalic-BF64361ef8678d8.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-Regular-BF64361ef86ac54.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-Regular-BF64361ef86ac54.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-Regular-BF64361ef86ac54.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-RegularItalic-BF64361ef87d404.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-RegularItalic-BF64361ef87d404.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-RegularItalic-BF64361ef87d404.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-XBlack-BF64361ef89b2ad.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-XBlack-BF64361ef89b2ad.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-XBlack-BF64361ef89b2ad.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-XBlackItalic-BF64361ef755599.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-XBlackItalic-BF64361ef755599.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-XBlackItalic-BF64361ef755599.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-XLight-BF64361ef78715a.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-XLight-BF64361ef78715a.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-XLight-BF64361ef78715a.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners';
+    src: url('{{ "OwnersTRIAL-XLightItalic-BF64361ef7c9bfe.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL';
+    src: url('{{ "OwnersTRIAL-XLightItalic-BF64361ef7c9bfe.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL';
+    src: url('{{ "OwnersTRIAL-XLightItalic-BF64361ef7c9bfe.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* ===========================
+     Owners Narrow
+  =========================== */
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Black-BF64361ef617d4a.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Black-BF64361ef617d4a.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Black-BF64361ef617d4a.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-BlackItalic-BF64361ef6df00d.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-BlackItalic-BF64361ef6df00d.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-BlackItalic-BF64361ef6df00d.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Bold-BF64361ef6a5529.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Bold-BF64361ef6a5529.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Bold-BF64361ef6a5529.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-BoldItalic-BF64361ef7040e8.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-BoldItalic-BF64361ef7040e8.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-BoldItalic-BF64361ef7040e8.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Light-BF64361ef747032.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Light-BF64361ef747032.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Light-BF64361ef747032.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-LightItalic-BF64361ef5c74c4.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-LightItalic-BF64361ef5c74c4.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-LightItalic-BF64361ef5c74c4.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Medium-BF64361ef5efe16.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Medium-BF64361ef5efe16.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Medium-BF64361ef5efe16.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-MediumItalic-BF64361ef6084e8.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-MediumItalic-BF64361ef6084e8.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-MediumItalic-BF64361ef6084e8.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Regular-BF64361ef60a8a3.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Regular-BF64361ef60a8a3.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-Regular-BF64361ef60a8a3.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-RegularItalic-BF64361ef5d0db1.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-RegularItalic-BF64361ef5d0db1.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-RegularItalic-BF64361ef5d0db1.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XBlack-BF64361ef5efd11.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XBlack-BF64361ef5efd11.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XBlack-BF64361ef5efd11.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XBlackItalic-BF64361ef60a7ac.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XBlackItalic-BF64361ef60a7ac.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XBlackItalic-BF64361ef60a7ac.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XLight-BF64361ef68aeff.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XLight-BF64361ef68aeff.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XLight-BF64361ef68aeff.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XLightItalic-BF64361ef5da9b6.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XLightItalic-BF64361ef5da9b6.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Narrow';
+    src: url('{{ "OwnersTRIALNarrow-XLightItalic-BF64361ef5da9b6.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* ===========================
+     Owners Wide
+  =========================== */
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-Black-BF64361ef56b4a9.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Black-BF64361ef56b4a9.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Black-BF64361ef56b4a9.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-BlackItalic-BF64361ef5ae2d5.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-BlackItalic-BF64361ef5ae2d5.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-BlackItalic-BF64361ef5ae2d5.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-Bold-BF64361ef5bf162.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Bold-BF64361ef5bf162.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Bold-BF64361ef5bf162.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-BoldItalic-BF64361ef5c9f27.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-BoldItalic-BF64361ef5c9f27.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-BoldItalic-BF64361ef5c9f27.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-Light-BF64361ef5869d4.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Light-BF64361ef5869d4.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Light-BF64361ef5869d4.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-LightItalic-BF64361ef5893b0.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-LightItalic-BF64361ef5893b0.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-LightItalic-BF64361ef5893b0.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-Medium-BF64361ef58e5aa.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Medium-BF64361ef58e5aa.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Medium-BF64361ef58e5aa.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-MediumItalic-BF64361ef4dbfad.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-MediumItalic-BF64361ef4dbfad.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-MediumItalic-BF64361ef4dbfad.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-Regular-BF64361ef587a10.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Regular-BF64361ef587a10.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-Regular-BF64361ef587a10.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-RegularItalic-BF64361ef559168.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-RegularItalic-BF64361ef559168.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-RegularItalic-BF64361ef559168.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-XBlack-BF64361ef567cf7.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-XBlack-BF64361ef567cf7.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-XBlack-BF64361ef567cf7.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-XBlackItalic-BF64361ef58b234.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-XBlackItalic-BF64361ef58b234.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-XBlackItalic-BF64361ef58b234.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-XLight-BF64361ef5b50f6.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-XLight-BF64361ef5b50f6.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-XLight-BF64361ef5b50f6.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners Wide';
+    src: url('{{ "OwnersTRIALWide-XLightItalic-BF64361ef58b34c.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-XLightItalic-BF64361ef58b34c.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL Wide';
+    src: url('{{ "OwnersTRIALWide-XLightItalic-BF64361ef58b34c.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* ===========================
+     Owners XNarrow
+  =========================== */
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Black-BF64361ef4cc588.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Black-BF64361ef4cc588.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Black-BF64361ef4cc588.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-BlackItalic-BF64361ef518e01.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-BlackItalic-BF64361ef518e01.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-BlackItalic-BF64361ef518e01.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Bold-BF64361ef52c32a.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Bold-BF64361ef52c32a.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Bold-BF64361ef52c32a.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-BoldItalic-BF64361ef52b3ba.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-BoldItalic-BF64361ef52b3ba.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-BoldItalic-BF64361ef52b3ba.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Light-BF64361ef492e9f.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Light-BF64361ef492e9f.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Light-BF64361ef492e9f.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-LightItalic-BF64361ef54aaa3.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-LightItalic-BF64361ef54aaa3.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-LightItalic-BF64361ef54aaa3.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Medium-BF64361ef56d2ee.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Medium-BF64361ef56d2ee.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Medium-BF64361ef56d2ee.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-MediumItalic-BF64361ef4dbfd2.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-MediumItalic-BF64361ef4dbfd2.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-MediumItalic-BF64361ef4dbfd2.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Regular-BF64361ef4858e4.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Regular-BF64361ef4858e4.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-Regular-BF64361ef4858e4.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-RegularItalic-BF64361ef4a3379.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-RegularItalic-BF64361ef4a3379.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-RegularItalic-BF64361ef4a3379.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XBlack-BF64361ef464c49.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XBlack-BF64361ef464c49.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XBlack-BF64361ef464c49.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XBlackItalic-BF64361ef4b9cb8.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XBlackItalic-BF64361ef4b9cb8.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XBlackItalic-BF64361ef4b9cb8.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XLight-BF64361ef4a8744.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XLight-BF64361ef4a8744.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XLight-BF64361ef4a8744.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XLightItalic-BF64361ef502940.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XLightItalic-BF64361ef502940.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XNarrow';
+    src: url('{{ "OwnersTRIALXNarrow-XLightItalic-BF64361ef502940.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* ===========================
+     Owners XWide
+  =========================== */
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-Black-BF64361ef4a5a8a.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Black-BF64361ef4a5a8a.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Black-BF64361ef4a5a8a.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-BlackItalic-BF64361ef535bac.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-BlackItalic-BF64361ef535bac.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-BlackItalic-BF64361ef535bac.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-Bold-BF64361ef47bafb.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Bold-BF64361ef47bafb.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Bold-BF64361ef47bafb.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-BoldItalic-BF64361ef40e628.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-BoldItalic-BF64361ef40e628.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-BoldItalic-BF64361ef40e628.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-Light-BF64361ef40ee43.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Light-BF64361ef40ee43.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Light-BF64361ef40ee43.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-LightItalic-BF64361ef464616.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-LightItalic-BF64361ef464616.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-LightItalic-BF64361ef464616.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-Medium-BF64361ef4cb276.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Medium-BF64361ef4cb276.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Medium-BF64361ef4cb276.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-MediumItalic-BF64361ef4c4999.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-MediumItalic-BF64361ef4c4999.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-MediumItalic-BF64361ef4c4999.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-Regular-BF64361ef46536f.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Regular-BF64361ef46536f.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-Regular-BF64361ef46536f.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-RegularItalic-BF64361ef34f591.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-RegularItalic-BF64361ef34f591.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-RegularItalic-BF64361ef34f591.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-XBlack-BF64361ef431122.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-XBlack-BF64361ef431122.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-XBlack-BF64361ef431122.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-XBlackItalic-BF64361ef34a762.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-XBlackItalic-BF64361ef34a762.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-XBlackItalic-BF64361ef34a762.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-XLight-BF64361ef462735.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-XLight-BF64361ef462735.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-XLight-BF64361ef462735.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XWide';
+    src: url('{{ "OwnersTRIALXWide-XLightItalic-BF64361ef49a6d2.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-XLightItalic-BF64361ef49a6d2.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XWide';
+    src: url('{{ "OwnersTRIALXWide-XLightItalic-BF64361ef49a6d2.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* ===========================
+     Owners XXNarrow
+  =========================== */
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Black-BF64361ef45c7f3.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Black-BF64361ef45c7f3.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Black-BF64361ef45c7f3.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-BlackItalic-BF64361ef455a05.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-BlackItalic-BF64361ef455a05.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-BlackItalic-BF64361ef455a05.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Bold-BF64361ef4b01c4.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Bold-BF64361ef4b01c4.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Bold-BF64361ef4b01c4.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-BoldItalic-BF64361ef4dafe5.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-BoldItalic-BF64361ef4dafe5.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-BoldItalic-BF64361ef4dafe5.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Light-BF64361ef43a62b.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Light-BF64361ef43a62b.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Light-BF64361ef43a62b.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-LightItalic-BF64361ef33ae7a.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-LightItalic-BF64361ef33ae7a.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-LightItalic-BF64361ef33ae7a.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Medium-BF64361ef3f04c8.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Medium-BF64361ef3f04c8.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Medium-BF64361ef3f04c8.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-MediumItalic-BF64361ef3f3f0a.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-MediumItalic-BF64361ef3f3f0a.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-MediumItalic-BF64361ef3f3f0a.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Regular-BF64361ef391cd1.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Regular-BF64361ef391cd1.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-Regular-BF64361ef391cd1.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-RegularItalic-BF64361ef4edef8.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-RegularItalic-BF64361ef4edef8.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-RegularItalic-BF64361ef4edef8.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XBlack-BF64361ef35f3bb.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XBlack-BF64361ef35f3bb.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XBlack-BF64361ef35f3bb.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XBlackItalic-BF64361ef46c4db.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XBlackItalic-BF64361ef46c4db.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XBlackItalic-BF64361ef46c4db.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XLight-BF64361ef40d120.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XLight-BF64361ef40d120.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XLight-BF64361ef40d120.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XLightItalic-BF64361ef2dfe02.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XLightItalic-BF64361ef2dfe02.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXNarrow';
+    src: url('{{ "OwnersTRIALXXNarrow-XLightItalic-BF64361ef2dfe02.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* ===========================
+     Owners XXWide
+  =========================== */
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Black-BF64361ef2f3679.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Black-BF64361ef2f3679.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Black-BF64361ef2f3679.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-BlackItalic-BF64361ef35a5bb.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-BlackItalic-BF64361ef35a5bb.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-BlackItalic-BF64361ef35a5bb.otf" | asset_url }}') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Bold-BF64361ef32b59e.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Bold-BF64361ef32b59e.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Bold-BF64361ef32b59e.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-BoldItalic-BF64361ef34297c.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-BoldItalic-BF64361ef34297c.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-BoldItalic-BF64361ef34297c.otf" | asset_url }}') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Light-BF64361ef40f194.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Light-BF64361ef40f194.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Light-BF64361ef40f194.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-LightItalic-BF64361ef42f2f9.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-LightItalic-BF64361ef42f2f9.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-LightItalic-BF64361ef42f2f9.otf" | asset_url }}') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Medium-BF64361ef3f368e.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Medium-BF64361ef3f368e.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Medium-BF64361ef3f368e.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-MediumItalic-BF64361ef18a98e.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-MediumItalic-BF64361ef18a98e.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-MediumItalic-BF64361ef18a98e.otf" | asset_url }}') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Regular-BF64361ef198d46.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Regular-BF64361ef198d46.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-Regular-BF64361ef198d46.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-RegularItalic-BF64361ef1a4f01.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-RegularItalic-BF64361ef1a4f01.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-RegularItalic-BF64361ef1a4f01.otf" | asset_url }}') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XBlack-BF64361ef2c0e83.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XBlack-BF64361ef2c0e83.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XBlack-BF64361ef2c0e83.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XBlackItalic-BF64361ef296d2c.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XBlackItalic-BF64361ef296d2c.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XBlackItalic-BF64361ef296d2c.otf" | asset_url }}') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XLight-BF64361ef2c0a80.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XLight-BF64361ef2c0a80.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XLight-BF64361ef2c0a80.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XLightItalic-BF64361ef35247d.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Owners TRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XLightItalic-BF64361ef35247d.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'OwnersTRIAL XXWide';
+    src: url('{{ "OwnersTRIALXXWide-XLightItalic-BF64361ef35247d.otf" | asset_url }}') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+{% endstyle %}

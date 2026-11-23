@@ -1,0 +1,32 @@
+{% doc %}
+  Renders the header logo.
+  @param {string} [logo_position] - Header logo position from the header section
+  @example
+  {% render 'nw-header-logo', logo_position: section.settings.logo_position %}
+{% enddoc %}
+
+{%- liquid
+  assign logo_alt = settings.logo.alt | default: shop.name | escape
+
+  if logo_position == 'middle-center'
+    assign logo_sizes = '(min-width: 750px) 146px, 50vw'
+  else
+    assign logo_sizes = '(max-width: 480px) 124px, 146px'
+  endif
+-%}
+
+{%- if settings.logo != blank -%}
+  <div class="header__heading-logo-wrapper">
+    <img
+      src="{{ settings.logo | image_url: width: 300 }}"
+      alt="{{ logo_alt }}"
+      class="header__heading-logo motion-reduce"
+      width="{{ settings.logo.width }}"
+      height="{{ settings.logo.height }}"
+      sizes="{{ logo_sizes }}"
+      preload="eager"
+    >
+  </div>
+{%- else -%}
+  <span class="h2">{{ shop.name }}</span>
+{%- endif -%}

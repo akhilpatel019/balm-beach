@@ -1,0 +1,343 @@
+#scrollbar-measure {
+    position: absolute;
+    visibility: hidden;
+    overflow: scroll;
+    width: 100px;
+    height: 100px;
+    top: -9999px;
+    left: -9999px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#scrollbar-measure .scrollbar-measure-inner {
+    width: 200px;
+    height: 200px;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+html.overflow-hidden,
+html.overflow-hidden-desktop,
+body.overflow-hidden,
+body.overflow-hidden-desktop {
+    padding-right: var(--scrollbar-width);
+}
+
+html.cart-drawer-open,
+html.cart-drawer-open body,
+html.cart-drawer-open #nw-site-scroll {
+    overflow: visible !important;
+    height: auto;
+}
+
+html.cart-drawer-open {
+    padding-right: 0 !important;
+}
+
+html.cart-drawer-open body.overflow-hidden {
+    overflow: visible !important;
+    padding-right: 0 !important;
+}
+
+body.upcartPopupShow {
+    overflow: unset !important;
+}
+
+html:has(body.upcartPopupShow){
+    overflow: hidden !important;
+    padding-right: var(--scrollbar-width) !important;
+}
+
+cart-drawer.drawer {
+    z-index: 1000;
+}
+
+body {
+    letter-spacing: 0;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-family: var(--font-heading-family);
+    font-weight: 400;
+    color: var(--nw-brown);
+}
+
+h1,
+.h1 {
+    font-family: var(--font-heading-family);
+    font-style: normal;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 136.8px;
+    letter-spacing: -.01em;
+    text-transform: capitalize;
+    color: var(--nw-espresso);
+    margin: 0;
+    width: 100%;
+}
+
+h3,
+.h3 {
+    font-family: var(--font-heading-family);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 115%;
+    letter-spacing: -0.01em;
+    text-transform: capitalize;
+    color: var(--nw-espresso);
+}
+
+h2,
+.h2 {
+    font-family: var(--font-heading-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 115%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: capitalize;
+    color: var(--nw-espresso);
+    margin: 0;
+    width: 100%;
+}
+
+
+.rte {
+    font-family: var(--font-body-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: var(--nw-espresso);
+}
+
+.rte>*:first-child {
+    margin-top: 0;
+}
+
+.rte>*:last-child {
+    margin-bottom: 0;
+}
+
+
+@media screen and (max-width: 749px) {
+
+     h1,
+    .h1 {
+        font-size: 36px;
+        line-height: 115%;
+        text-align: center;
+        letter-spacing: -0.01em;
+    }
+
+    h2,
+    .h2 {
+        font-size: 32px;
+        line-height: 115%;
+        letter-spacing: -2%;
+    }
+
+    .rte {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+
+    h2,
+    .h2 {
+        font-size: 32px;
+    }
+
+    .rte {
+        font-size: 16px;
+    }
+}
+
+
+
+.header-wrapper{
+    background: #F2E8D2;
+}
+
+/* ===========================
+   Header Custom Logo Width
+=========================== */
+.header .header__heading-logo-wrapper {
+  width: 146px;
+  max-width: 100%;
+}
+
+
+.header__inline-menu .header__menu-item {
+    font-size: 11px;
+    line-height: 100%;
+    color: var(--nw-espresso);
+    font-family: var(--font-body-family);
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+}
+
+.header .header__heading-logo {
+  width: 100%;
+  max-width: 146px;
+  height: auto;
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .header .header__heading-logo-wrapper {
+    width: 124px;
+    max-width: 124px;
+  }
+
+  .header .header__heading-logo {
+    max-width: 124px;
+  }
+}
+
+/* ===========================
+   Header Custom Icons & Toggles
+=========================== */
+.header .header__icon .icon,
+.header .header__icon--cart .icon,
+.header .header__icon .svg-wrapper svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Close (X) icon - hidden by default, visible only when open */
+.header .header__icon-close {
+  display: none;
+}
+
+.header details[open] .header__icon-close {
+  display: flex;
+}
+
+.header details[open] .modal__toggle .svg-wrapper:not(.header__icon-close) {
+  display: none;
+}
+
+.header .header__icon .icon-close {
+  width: 14px;
+  height: 14px;
+}
+
+/* ===========================
+   Mobile Header Layout:
+   Menu (Left) | Logo (Center) | Icons (Right)
+=========================== */
+@media screen and (max-width: 989px) {
+  .header,
+  .header.header--mobile-left,
+  .header.header--mobile-center {
+    grid-template-areas: 'left-icons heading icons';
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .header header-drawer {
+    justify-self: start;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .header .header__icon--cart {
+    margin-right: 0;
+  }
+
+  .header .header__heading,
+  .header .header__heading-link {
+    justify-self: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .header .header__icons {
+    justify-self: end;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header .header__icon .icon,
+  .header .header__icon--cart .icon,
+  .header .header__icon .svg-wrapper svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Close (X) icon - balanced visual size */
+  .header .header__icon .icon-close {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Ensure Close icon is hidden when Search or Menu is closed */
+  .header .header__icon-close,
+  .header details:not([open]) .header__icon-close,
+  .header header-drawer details:not([open]) .icon-close {
+    display: none;
+  }
+
+  /* When Search or Menu is open, toggle icons properly */
+  .header details[open] .header__icon-close {
+    display: flex;
+  }
+
+  .header details[open] .modal__toggle .svg-wrapper:not(.header__icon-close) {
+    display: none;
+  }
+
+  .header header-drawer details[open] .icon-hamburger {
+    display: none;
+  }
+
+  .header header-drawer details[open] .icon-close {
+    display: block;
+  }
+
+  /* Uniform 24px button boxes so gap: 6px is perfectly equal */
+  .header .header__search,
+  .header .header__icon,
+  .header .header__icon .svg-wrapper:not(.header__icon-close),
+  .header .header__icon--cart .icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header .header__icons {
+    gap: 6px;
+  }
+
+}
+
+
+
+

@@ -2234,10 +2234,16 @@ input[type='checkbox'] {
   }
 
   .announcement-bar .slider-button {
-    height: 3.8rem;
+    height: 1rem;
+    color: #F2E8D2;
   }
 }
 
+.announcement-bar .slider-button:not([disabled]):hover {
+  color: #F2E8D2;
+}
+
+ 
 .announcement-bar__link {
   display: flex;
   width: 100%;
@@ -2864,9 +2870,9 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
+  color: var(--nw-espresso);
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 0.6rem;
 }
 
 .header__menu-item:hover .header__active-menu-item {
