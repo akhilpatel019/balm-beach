@@ -1,0 +1,291 @@
+/* ========================================================
+   NW Collection Section & Product Card Styles
+   ======================================================== */
+
+/* --------------------------------------------------------
+   1. Base Styles (Mobile First)
+   -------------------------------------------------------- */
+.nw-collection__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* Card Root */
+.nw-collection_card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Image Wrapper & Badge */
+.nw-collection_img_wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--nw-bone, #FCF7EB);
+}
+
+.nw-product_ad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #4d7a88;
+  color: #ffffff;
+  text-align: center;
+  font-family: var(--font-body-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.nw-collection_card_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Title & Price */
+.nw-collection_card_title_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.product_title {
+  font-family: var(--font-heading-family);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--nw-espresso, #3A2418);
+  flex: 1;
+}
+
+.product_title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product_price {
+  font-family: var(--font-heading-family);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--nw-espresso, #3A2418);
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* Rating & Reviews */
+.nw-collection_card_rating_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.product_rating_start {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.product_rating_start img {
+  width: 13px;
+  height: 13px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.product_review {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #D78A15;
+}
+
+/* Description */
+.nw-collection_card_description {
+  margin-top: 6px;
+}
+
+.product_desc {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--nw-cocoa, #6B4427);
+  margin: 0;
+}
+
+/* Add to Cart Button */
+.nw-collection_card_cart_btn {
+  margin-top: 14px;
+}
+
+.nw-collection_card_cart_btn form {
+  display: inline-block;
+  margin: 0;
+}
+
+.nw-shop-now-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  min-height: 42px;
+  background-color: #ffffff;
+  color: var(--nw-espresso, #3A2418);
+  border: 1px solid var(--nw-espresso, #3A2418);
+  border-radius: 0;
+  font-family: var(--font-heading-family);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.nw-shop-now-btn:hover {
+  background-color: var(--nw-espresso, #3A2418);
+  color: #ffffff;
+}
+
+.nw-shop-now-btn:focus-visible {
+  outline: 2px solid var(--nw-sky, #5795CE);
+  outline-offset: 2px;
+}
+
+.nw-shop-now-btn.nw-out-of-stock {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* --------------------------------------------------------
+   2. Tablet (750px and above)
+   -------------------------------------------------------- */
+@media screen and (min-width: 750px) {
+  .nw-collection__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .nw-product_ad {
+    font-size: 11px;
+    padding: 7px 10px;
+    letter-spacing: 0.15em;
+  }
+
+  .nw-collection_card_title_price {
+    margin-top: 14px;
+    gap: 10px;
+  }
+
+  .product_title {
+    font-size: 15px;
+  }
+
+  .product_price {
+    font-size: 15px;
+  }
+
+  .nw-collection_card_rating_wrapper {
+    margin-top: 8px;
+    gap: 8px;
+  }
+
+  .product_rating_start img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .product_review {
+    font-size: 13px;
+  }
+
+  .nw-collection_card_description {
+    margin-top: 8px;
+  }
+
+  .product_desc {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .nw-collection_card_cart_btn {
+    margin-top: 16px;
+  }
+
+  .nw-shop-now-btn {
+    padding: 12px 26px;
+    min-height: 46px;
+    font-size: 13px;
+  }
+}
+
+
+/* --------------------------------------------------------
+   3. Desktop (990px and above)
+   -------------------------------------------------------- */
+@media screen and (min-width: 990px) {
+  .nw-collection__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .nw-collection_card:hover .nw-collection_card_image {
+    transform: scale(1.04);
+  }
+
+  .nw-product_ad {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+
+  .nw-collection_card_title_price {
+    margin-top: 16px;
+    gap: 12px;
+  }
+
+  .product_title {
+    font-size: 16px;
+  }
+
+  .product_price {
+    font-size: 16px;
+  }
+
+  .product_desc {
+    font-size: 14px;
+  }
+
+  .nw-shop-now-btn {
+    padding: 14px 28px;
+    min-height: 48px;
+    font-size: 13px;
+  }
+}

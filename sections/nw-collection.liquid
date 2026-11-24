@@ -1,0 +1,299 @@
+{% assign shell_selector = '.nw-collection.section-' | append: section.id %}
+{% render 'nw-section-shell', selector: shell_selector %}
+
+{{ 'nw-collection.css' | asset_url | stylesheet_tag }}
+
+
+
+<div class="nw-collection section-{{ section.id }}">
+  <div class="page-width">
+    {% render 'nw-section-header' %}
+
+    <div class="nw-collection__grid">
+      {% assign nw_collection = section.settings.selected_collection %}
+
+      {% if nw_collection != blank %}
+        {% for product in nw_collection.products %}
+          <div class="nw-collection_card">
+            <!-- Product Image & Badge -->
+            <div class="nw-collection_img_wrapper">
+              {% if product.metafields.custom.product_color_badge.value != blank %}
+                <div class="nw-product_ad">
+                  {{ product.metafields.custom.product_color_badge.value }}
+                </div>
+              {% endif %}
+
+              {% if product.featured_image != blank %}
+                <img
+                  class="nw-collection_card_image"
+                  src="{{ product.featured_image | image_url: width: 800 }}"
+                  alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                  width="{{ product.featured_image.width }}"
+                  height="{{ product.featured_image.height }}"
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
+
+            <!-- Product Title & Price -->
+            <div class="nw-collection_card_title_price">
+              <div class="product_title">
+                {{ product.title | escape }}
+              </div>
+
+              <div class="product_price">
+                {{ product.price | money_with_currency }}
+              </div>
+            </div>
+
+            <!-- Product Rating & Review -->
+            <div class="nw-collection_card_rating_wrapper">
+              {% assign rating = product.metafields.custom.product_rating.value.rating %}
+
+              {% if rating != blank and rating > 0 %}
+                <div class="product_rating_start">
+                  {% assign full_stars = rating | floor %}
+
+                  {% for i in (1..full_stars) %}
+                    <img
+                      src="{{ 'rating-star.svg' | asset_url }}"
+                      alt="Star"
+                      width="18"
+                      height="18"
+                      loading="lazy"
+                    >
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% if product.metafields.custom.product_review.value != blank %}
+                <div class="product_review">
+                  {{ product.metafields.custom.product_review.value }}
+                </div>
+              {% endif %}
+            </div>
+
+            <!-- Product Description -->
+            <div class="nw-collection_card_description">
+              {% if product.description != blank %}
+                <div class="product_desc">
+                  {{ product.description | strip_html | truncate: 120 }}
+                </div>
+              {% endif %}
+            </div>
+
+            <!-- Add to Cart Button -->
+            <div class="nw-collection_card_cart_btn">
+              {% if product.available %}
+                {% assign first_available_variant = product.first_available_variant %}
+
+                <form action="{{ routes.cart_add_url }}" method="post">
+                  <input
+                    type="hidden"
+                    name="id"
+                    value="{{ first_available_variant.id }}"
+                  >
+
+                  <input
+                    type="hidden"
+                    name="quantity"
+                    value="1"
+                  >
+
+                  <button type="submit" class="nw-shop-now-btn">Shop Now</button>
+                </form>
+
+              {% else %}
+                <button
+                  type="button"
+                  class="nw-shop-now-btn nw-out-of-stock"
+                  disabled
+                >
+                  Out of Stock
+                </button>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "NW Collection",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "SECTION HEADER"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "COLLECTION"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Collection"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header Alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "HEADER COLORS"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Color"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color"
+    },
+    {
+      "type": "header",
+      "content": "COLLECTION"
+    },
+    {
+      "type": "collection",
+      "id": "selected_collection",
+      "label": "Select Collection"
+    },
+    {
+      "type": "header",
+      "content": "BACKGROUND"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Background Type",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None (Transparent)"
+        },
+        {
+          "value": "color",
+          "label": "Solid Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_gradient",
+      "label": "Background Gradient"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Desktop Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "header",
+      "content": "SECTION SPACING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Desktop Top Padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Desktop Bottom Padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile Top Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile Bottom Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "NW Collection",
+      "category": "NW SECTIONS"
+    }
+  ]
+}
+{% endschema %}
