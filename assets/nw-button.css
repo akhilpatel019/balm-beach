@@ -1,0 +1,97 @@
+/* Common button styles */
+.nw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0px 36px;
+  min-height: 60px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  text-decoration: none;
+  font-family: var(--font-body-family);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.4s ease;
+}
+
+/* Primary button */
+.nw-btn-primary {
+  background-color: var(--sunset-yellow);
+  color: var(--espresso);
+  border-color: var(--sunset-yellow);
+}
+
+/* Primary hover - swap colors */
+.nw-btn-primary:hover {
+  background-color: var(--espresso);
+  color: var(--sunset-yellow);
+  border-color: var(--espresso);
+  transform: translateY(-2px);
+}
+
+/* Secondary button */
+.nw-btn-secondary {
+  background-color: var(--nw-espresso);
+  color: var(--nw-cream);
+  border-color: var(--nw-espresso);
+}
+
+/* Secondary hover - swap colors */
+.nw-btn-secondary:hover {
+  background-color: var(--nw-cream);
+  color: var(--nw-espresso);
+  border-color: var(--nw-cream);
+  transform: translateY(-2px);
+}
+
+/* Button icon */
+.nw-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.nw-btn__icon svg {
+  display: block;
+  width: 13px;
+  height: 13px;
+}
+
+/* Icon hover animation */
+.nw-btn:hover .nw-btn__icon {
+  transform: translateX(4px);
+}
+
+/* Keyboard focus */
+.nw-btn:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 4px;
+}
+
+
+@media screen and (max-width: 480px) {
+    .nw-btn{
+        width: 100%;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .nw-btn,
+  .nw-btn__icon {
+    transition: none;
+  }
+
+  .nw-btn:hover,
+  .nw-btn:hover .nw-btn__icon {
+    transform: none;
+  }
+}

@@ -1,0 +1,514 @@
+{% assign shell_selector = '.nw-hero.section-' | append: section.id %}
+{% render 'nw-section-shell', selector: shell_selector, default_bg_type: 'image' %}
+
+{{ 'nw-hero.css' | asset_url | stylesheet_tag }}
+
+
+{% style %}
+  /* Base styles - Mobile */
+  .nw-hero.section-{{ section.id }} {
+    align-items: {{ section.settings.vertical_positioning | default: 'flex-end' }};
+
+    {% if section.settings.height_type == 'fill' %}
+      min-height: 65vh;
+      min-height: 65svh;
+    {% else %}
+      min-height: min({{ section.settings.fixed_height | default: 600 }}px, 85svh);
+    {% endif %}
+  }
+
+  .nw-hero.section-{{ section.id }} .nw-hero__overlay {
+
+    background: linear-gradient(180deg, rgba(102, 102, 102, 0.3) 0%, rgba(0, 0, 0, 0.3) 61.36%);
+    opacity: {{ section.settings.overlay_opacity | default: 30 | divided_by: 100.0 }};
+    display: block;
+  }
+
+  .nw-hero.section-{{ section.id }} .page-width {
+    position: relative;
+    z-index: 2;
+    justify-content: {{ section.settings.horizontal_positioning | default: 'flex-start' }};
+    align-items: {{ section.settings.vertical_positioning | default: 'flex-end' }};
+  }
+
+  .nw-hero.section-{{ section.id }} .nw-hero-block {
+    text-align: {{ section.settings.header_alignment | default: 'left' }};
+    align-items:
+      {%- case section.settings.header_alignment -%}
+        {%- when 'center' -%}center
+        {%- when 'right' -%}flex-end
+        {%- else -%}flex-start
+      {%- endcase -%};
+  }
+
+  {% if section.settings.header_alignment == 'center' %}
+    .nw-hero.section-{{ section.id }} .nw-hero-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .nw-hero.section-{{ section.id }} .nw-hero-btn-wrapper {
+      justify-content: center;
+    }
+  {% elsif section.settings.header_alignment == 'right' %}
+    .nw-hero.section-{{ section.id }} .nw-hero-description {
+      margin-left: auto;
+    }
+
+    .nw-hero.section-{{ section.id }} .nw-hero-btn-wrapper {
+      justify-content: flex-end;
+    }
+  {% endif %}
+
+  .nw-hero.section-{{ section.id }} .nw-hero-heading {
+    font-size: {{ section.settings.heading_size_mobile | default: 36 }}px;
+  }
+
+  {% if section.settings.heading_color_normal != blank %}
+    .nw-hero.section-{{ section.id }} .nw-hero-heading__normal {
+      color: {{ section.settings.heading_color_normal }};
+    }
+  {% endif %}
+
+  {% if section.settings.heading_color_highlighted != blank %}
+    .nw-hero.section-{{ section.id }} .nw-hero-heading__highlighted {
+      color: {{ section.settings.heading_color_highlighted }};
+    }
+  {% endif %}
+
+  {% if section.settings.description_color != blank %}
+    .nw-hero.section-{{ section.id }} .nw-hero-description,
+    .nw-hero.section-{{ section.id }} .nw-hero-description p {
+      color: {{ section.settings.description_color }};
+    }
+  {% endif %}
+
+
+  /* Tablet - 750px and above */
+  @media screen and (min-width: 750px) {
+    .nw-hero.section-{{ section.id }} {
+      {% if section.settings.height_type == 'fill' %}
+        min-height: 70vh;
+        min-height: 70svh;
+      {% else %}
+        min-height: {{ section.settings.fixed_height | default: 600 }}px;
+      {% endif %}
+    }
+  .nw-hero.section-{{ section.id }} .nw-hero-heading {
+    font-size: 56px;
+  }
+   
+  }
+
+
+  /* Desktop - 990px and above */
+  @media screen and (min-width: 990px) {
+    .nw-hero.section-{{ section.id }} {
+      {% if section.settings.height_type == 'fill' %}
+        min-height: 78vh;
+        min-height: 78svh;
+      {% else %}
+        min-height: {{ section.settings.fixed_height | default: 600 }}px;
+      {% endif %}
+    }
+
+      .nw-hero.section-{{ section.id }} .nw-hero__overlay {
+        background-color: {{ section.settings.overlay_color | default: '#000000' }};
+    }
+
+     .nw-hero.section-{{ section.id }} .nw-hero-heading {
+      font-size: {{ section.settings.heading_size_desktop | default: 112 }}px;
+    }
+  }
+{% endstyle %}
+
+
+<div class="nw-hero section-{{ section.id }}">
+  {% if section.settings.overlay_enabled %}
+    <div class="nw-hero__overlay"></div>
+  {% endif %}
+  <div class="page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="nw-hero-block">
+      {%- if section.settings.heading_normal != blank or section.settings.heading_highlighted != blank -%}
+        {%- if section.settings.primary_page_heading == true -%}
+          <h1 class="nw-hero-heading{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %}data-cascade style="--animation-order: 1;"{% endif %}>
+            {%- if section.settings.heading_normal != blank -%}
+              <span class="nw-hero-heading__normal">{{ section.settings.heading_normal }}</span>
+            {%- endif -%}
+            {%- if section.settings.heading_highlighted != blank -%}
+              <span class="nw-hero-heading__highlighted">{{ section.settings.heading_highlighted }}</span>
+            {%- endif -%}
+          </h1>
+        {%- else -%}
+          <h2 class="nw-hero-heading">
+            {%- if section.settings.heading_normal != blank -%}
+              <span class="nw-hero-heading__normal">{{ section.settings.heading_normal }}</span>
+            {%- endif -%}
+            {%- if section.settings.heading_highlighted != blank -%}
+              <span class="nw-hero-heading__highlighted">{{ section.settings.heading_highlighted }}</span>
+            {%- endif -%}
+          </h2>
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- if section.settings.subheading != blank -%}
+        <div class="nw-hero-description rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"  {% if settings.animations_reveal_on_scroll %}data-cascade style="--animation-order: 2;"{% endif %}>
+          {{ section.settings.subheading }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_text != blank -%}
+        <div class="nw-hero-btn-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"  {% if settings.animations_reveal_on_scroll %}data-cascade style="--animation-order: 1;"{% endif %}>
+          {% render 'nw-button',
+            text: section.settings.button_text,
+            link: section.settings.button_link,
+            type: section.settings.button_type,
+            icon: section.settings.btn_icon
+          %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "NW Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "HERO CONTENT BOX & POSITIONING"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_positioning",
+      "label": "Horizontal Positioning",
+      "default": "flex-start",
+      "options": [
+        {
+          "label": "Left",
+          "value": "flex-start"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "vertical_positioning",
+      "label": "Vertical Positioning",
+      "default": "flex-end",
+      "options": [
+        {
+          "label": "Top",
+          "value": "flex-start"
+        },
+        {
+          "label": "Middle",
+          "value": "center"
+        },
+        {
+          "label": "Bottom",
+          "value": "flex-end"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Text Alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "SECTION CONTENT"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading_normal",
+      "label": "Heading Normal",
+      "default": "A HEALTHY DIET"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading_highlighted",
+      "label": "Heading Highlighted",
+      "default": "FOR YOUR SKIN."
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading Size Desktop",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 112,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading Size Mobile",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "primary_page_heading",
+      "label": "Set As Primary Page Heading",
+      "default": true,
+      "info": "Use <h1> tag. One per page recommended."
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Description",
+      "default": "<p>Skin care that smells like beach days and melts into your skin.</p>"
+    },
+    {
+      "type": "header",
+      "content": "TEXT COLORS"
+    },
+    {
+      "type": "color",
+      "id": "heading_color_normal",
+      "label": "Normal Heading Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color_highlighted",
+      "label": "Highlighted Heading Color",
+      "default": "#F2A93B"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "BUTTON CONTENT"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label",
+      "default": "SHOP THE SUMMER DROP"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "label": "Button Type",
+      "default": "primary",
+      "options": [
+        {
+          "label": "Primary",
+          "value": "primary"
+        },
+        {
+          "label": "Secondary",
+          "value": "secondary"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "btn_icon",
+      "label": "Show Button Arrow Icon",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "SECTION HEIGHT"
+    },
+    {
+      "type": "select",
+      "id": "height_type",
+      "label": "Height Type",
+      "default": "fill",
+      "options": [
+        {
+          "value": "fill",
+          "label": "Fill Height (Viewport)"
+        },
+        {
+          "value": "fixed",
+          "label": "Fixed Height (Pixels)"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "fixed_height",
+      "label": "Fixed Height",
+      "min": 300,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "default": 600
+    },
+    {
+  "type": "header",
+  "content": "BACKGROUND"
+},
+{
+  "type": "select",
+  "id": "bg_type",
+  "label": "Background Type",
+  "default": "image",
+  "options": [
+    {
+      "value": "none",
+      "label": "None (Transparent)"
+    },
+    {
+      "value": "color",
+      "label": "Solid Color"
+    },
+    {
+      "value": "gradient",
+      "label": "Gradient"
+    },
+    {
+      "value": "image",
+      "label": "Image"
+    }
+  ]
+},
+{
+  "type": "color",
+  "id": "bg_color",
+  "label": "Background Color",
+  "default": "#1A1A1A",
+  "visible_if": "{{ section.settings.bg_type == 'color' }}"
+},
+{
+  "type": "color_background",
+  "id": "bg_gradient",
+  "label": "Background Gradient",
+  "visible_if": "{{ section.settings.bg_type == 'gradient' }}"
+},
+{
+  "type": "image_picker",
+  "id": "bg_image",
+  "label": "Desktop Background Image",
+  "visible_if": "{{ section.settings.bg_type == 'image' }}"
+},
+{
+  "type": "image_picker",
+  "id": "bg_image_mobile",
+  "label": "Mobile Background Image",
+  "visible_if": "{{ section.settings.bg_type == 'image' }}"
+},
+
+{
+  "type": "header",
+  "content": "BACKGROUND OVERLAY"
+},
+{
+  "type": "checkbox",
+  "id": "overlay_enabled",
+  "label": "Enable Background Overlay",
+  "default": true
+},
+{
+  "type": "color",
+  "id": "overlay_color",
+  "label": "Overlay Color",
+  "default": "#000000"
+},
+{
+  "type": "range",
+  "id": "overlay_opacity",
+  "label": "Overlay Opacity",
+  "min": 0,
+  "max": 100,
+  "step": 5,
+  "unit": "%",
+  "default": 30
+},
+    {
+      "type": "header",
+      "content": "SECTION SPACING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Desktop Top Padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Desktop Bottom Padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile Top Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile Bottom Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "NW Hero",
+      "category": "NW SECTIONS"
+    }
+  ]
+}
+{% endschema %}

@@ -109,7 +109,6 @@ h2,
     font-weight: 400;
     font-size: 36px;
     line-height: 115%;
-    text-align: center;
     letter-spacing: -0.01em;
     text-transform: capitalize;
     color: var(--nw-espresso);
@@ -143,7 +142,6 @@ h2,
     .h1 {
         font-size: 36px;
         line-height: 115%;
-        text-align: center;
         letter-spacing: -0.01em;
     }
 
@@ -337,6 +335,74 @@ h2,
   }
 
 }
+
+/* ===========================
+   Reusable Section Header Architecture
+=========================== */
+.nw-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.nw-section-header--align-center {
+  align-items: center;
+  text-align: center;
+}
+
+.nw-section-header--align-left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.nw-section-header--align-right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.nw-section-eyebrow {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  line-height: 120%;
+  font-weight: 600;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--nw-espresso);
+  margin: 0;
+}
+
+.nw-section-heading {
+  margin: 0;
+}
+
+.nw-section-description {
+  max-width: 680px;
+  margin: 0;
+}
+
+.nw-section-header--align-center .nw-section-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nw-section-header--align-right .nw-section-description {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 749px) {
+  .nw-section-header {
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .nw-section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.8px;
+  }
+}
+
 
 
 

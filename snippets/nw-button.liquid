@@ -1,0 +1,32 @@
+{% doc %}
+  Renders a primary or secondary button.
+
+  {% render 'nw-button',
+  text: section.settings.button_text,
+  link: section.settings.button_link,
+  type: section.settings.button_type,
+  icon: section.settings.btn_icon
+%}
+{% enddoc %}
+
+{% liquid
+  assign btn_type = type
+  assign btn_text = text
+  assign btn_link = link
+  assign btn_icon = icon
+%}
+
+{% if btn_text != blank %}
+  <a href="{{ btn_link | default: '#' }}"
+     class="nw-btn {% if btn_type == 'primary' %}nw-btn-primary{% else %}nw-btn-secondary{% endif %}">
+
+    <span>{{ btn_text | escape }}</span>
+
+    {% if btn_icon %}
+      <span class="nw-btn__icon">
+        {{ 'nw-btn-icon.svg' | inline_asset_content }}
+      </span>
+    {% endif %}
+
+  </a>
+{% endif %}

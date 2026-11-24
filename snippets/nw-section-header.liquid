@@ -1,0 +1,57 @@
+{% comment %}
+  Unified Section Header Component
+  Combines eyebrow, heading, and description with simple logic and optional colors.
+
+  @param {string} [eyebrow] - Eyebrow / pretitle text (defaults to section.settings.eyebrow)
+  @param {string} [heading] - Heading text (defaults to section.settings.heading or section.settings.title)
+  @param {string} [description] - Subheading / description content (defaults to section.settings.description or section.settings.subheading)
+  @param {string} [heading_tag] - 'h1' | 'h2' | 'h3' (defaults to 'h1' if section.index == 1 or section.settings.primary_page_heading, else 'h2')
+  @param {number} [section_index] - Section index position on page
+  @param {string} [align] - 'center' | 'left' | 'right' (defaults to section.settings.header_alignment or 'center')
+  @param {string} [eyebrow_color] - Eyebrow text color (defaults to section.settings.eyebrow_color)
+  @param {string} [heading_color] - Heading text color (defaults to section.settings.heading_color)
+  @param {string} [description_color] - Description text color (defaults to section.settings.description_color)
+  @param {string} [class] - Additional CSS class for container
+{% endcomment %}
+
+{%- liquid
+  assign header_align = align | default: section.settings.header_alignment | default: 'center'
+  assign header_eyebrow = eyebrow | default: section.settings.eyebrow
+  assign header_heading = heading | default: section.settings.heading | default: section.settings.title
+  assign header_description = description | default: subheading | default: section.settings.description | default: section.settings.subheading
+
+  assign tag = heading_tag
+  if tag == blank
+    if section.index == 1 or section_index == 1 or section.settings.primary_page_heading == true
+      assign tag = 'h1'
+    else
+      assign tag = 'h2'
+    endif
+  endif
+
+  assign eyebrow_clr = eyebrow_color | default: section.settings.eyebrow_color
+  assign heading_clr = heading_color | default: section.settings.heading_color
+  assign description_clr = description_color | default: section.settings.description_color
+-%}
+
+{%- if header_eyebrow != blank or header_heading != blank or header_description != blank -%}
+  <div class="nw-section-header nw-section-header--align-{{ header_align }}{% if class != blank %} {{ class }}{% endif %}">
+    {%- if header_eyebrow != blank -%}
+      <div class="nw-section-eyebrow"{% if eyebrow_clr != blank and eyebrow_clr != 'rgba(0,0,0,0)' %} style="color: {{ eyebrow_clr }};"{% endif %}>
+        {{ header_eyebrow }}
+      </div>
+    {%- endif -%}
+
+    {%- if header_heading != blank -%}
+      <{{ tag }} class="nw-section-heading"{% if heading_clr != blank and heading_clr != 'rgba(0,0,0,0)' %} style="color: {{ heading_clr }};"{% endif %}>
+        {{ header_heading }}
+      </{{ tag }}>
+    {%- endif -%}
+
+    {%- if header_description != blank -%}
+      <div class="nw-section-description rte"{% if description_clr != blank and description_clr != 'rgba(0,0,0,0)' %} style="color: {{ description_clr }};"{% endif %}>
+        {{ header_description }}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
