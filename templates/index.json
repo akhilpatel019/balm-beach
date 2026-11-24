@@ -9,76 +9,44 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+    "nw_hero_RrikbP": {
+      "type": "nw-hero",
+      "name": "NW Hero",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "horizontal_positioning": "flex-start",
+        "vertical_positioning": "flex-end",
+        "header_alignment": "left",
+        "heading_normal": "A HEALTHY DIET",
+        "heading_highlighted": "FOR YOUR SKIN.",
+        "heading_size_desktop": 112,
+        "heading_size_mobile": 34,
+        "primary_page_heading": true,
+        "subheading": "<p>Skin care that smells like beach days and melts into your skin.</p>",
+        "heading_color_normal": "#ffffff",
+        "heading_color_highlighted": "#f0a82c",
+        "description_color": "#fffefa",
+        "button_text": "Shop the summer drop",
+        "button_link": "shopify://collections",
+        "button_type": "primary",
+        "btn_icon": true,
+        "height_type": "fill",
+        "fixed_height": 1000,
+        "bg_type": "image",
+        "bg_color": "#1a1a1a",
+        "bg_gradient": "",
+        "bg_image": "shopify://shop_images/Section_1.webp",
+        "bg_image_mobile": "shopify://shop_images/Section.png",
+        "overlay_enabled": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 48
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "nw_hero_RrikbP"
   ]
 }
