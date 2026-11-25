@@ -49,6 +49,7 @@
       "type": "nw-collection",
       "name": "NW Collection",
       "settings": {
+        "selected_collection": "balm-beach",
         "eyebrow": "find your vibe",
         "heading": "&nbsp;feel good skin care.&nbsp;",
         "description": "<p>Soft creamy tallow balms with clean ingredients and addictive <em>natural</em> scents.</p>",
@@ -56,18 +57,50 @@
         "eyebrow_color": "#d88a14",
         "heading_color": "",
         "description_color": "",
-        "selected_collection": "balm-beach",
+        "show-hide-btn": true,
+        "button_text": "shop all skin care",
+        "button_link": "shopify://collections/balm-beach",
+        "button_type": "primary",
+        "btn_icon": true,
         "bg_type": "color",
         "bg_color": "#f2e8d2",
         "bg_gradient": "",
         "padding_top_desktop": 128,
         "padding_bottom_desktop": 128,
         "padding_top_mobile": 48,
-        "padding_bottom_mobile": 48      }
+        "padding_bottom_mobile": 48
+      }
+    },
+    "nw_split_banner_zmTJz6": {
+      "type": "nw-split-banner",
+      "name": "NW Split Banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Div_block-stacked-image__wrapper.png",
+        "eyebrow": "",
+        "heading": "you don’t have to check the label 3 times.",
+        "description": "<p>We are taking back our health and bringing back aesthetics & beauty as a source of inspiration in our world. We are proud to make a suite of nourishing self care offerings free from endocrine disruptors to have any King or Queen look and feel their absolute best.</p>",
+        "header_alignment": "left",
+        "eyebrow_color": "",
+        "heading_color": "",
+        "description_color": "",
+        "show-hide-btn": true,
+        "button_text": "SHOP all",
+        "button_link": "",
+        "button_type": "secondary",
+        "btn_icon": false,
+        "padding_top_desktop_banner": 80,
+        "padding_bottom_desktop_banner": 80,
+        "padding_top_mobile_banner": 48,
+        "padding_bottom_mobile_banner": 48,
+        "bg_type": "color",
+        "bg_color": "#f5c567",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
     "nw_hero_RrikbP",
-    "nw_collection_cCwWNR"
+    "nw_collection_cCwWNR",
+    "nw_split_banner_zmTJz6"
   ]
 }
