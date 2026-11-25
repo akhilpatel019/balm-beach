@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 50px;
 }
 
 .nw-logo-carousel__item img {
@@ -56,6 +57,10 @@
 @media screen and (min-width: 750px) {
   .nw-logo-carousel__track {
     gap: var(--logo-gap-desktop);
+  }
+
+  .nw-logo-carousel__item {
+    min-height: 70px;
   }
 
   .nw-logo-carousel__item img {

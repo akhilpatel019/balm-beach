@@ -41,9 +41,9 @@
 
 /* Secondary hover - swap colors */
 .nw-btn-secondary:hover {
-  background-color: var(--nw-cream);
+  background-color: var(--sunset-yellow);
   color: var(--nw-espresso);
-  border-color: var(--nw-cream);
+  border-color: var(--sunset-yellow);
   transform: translateY(-2px);
 }
 

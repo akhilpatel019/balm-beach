@@ -1,0 +1,368 @@
+{% assign shell_selector = '.nw-video-carousel.section-' | append: section.id %}
+{% render 'nw-section-shell', selector: shell_selector %}
+<script src="{{ 'nw-video-carousel.js' | asset_url }}" defer="defer"></script>
+
+{{ 'nw-video-carousel.css' | asset_url | stylesheet_tag }}
+
+<div class="nw-video-carousel section-{{ section.id }}">
+  <div class="page-width">
+    <div class="nw-video-header">
+      <div class="nw-video-header-rating" aria-label="{{ section.settings.star_rating }} out of 5 stars">
+        {% for i in (1..section.settings.star_rating) %}
+          <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M13.3148 0L16.458 9.67376H26.6296L18.4006 15.6525L21.5438 25.3262L13.3148 19.3475L5.08583 25.3262L8.22902 15.6525L2.76566e-05 9.67376H10.1716L13.3148 0Z"
+              fill="{{ section.settings.star-color }}"/>
+          </svg>
+        {% endfor %}
+      </div>
+      {% render 'nw-section-header' %}
+    </div>
+  </div>
+
+  {% if section.blocks.size > 0 %}
+    <nw-video-carousel
+      class="nw-video-carousel__container"
+      data-loop="{{ section.settings.enable_video_loop }}"
+      data-autoplay="{{ section.settings.enable_autoplay }}"
+      data-delay="{{ section.settings.autoplay_delay }}"
+    >
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {% assign passes = 1 %}
+          {% if section.blocks.size < 8 %}
+            {% assign passes = 2 %}
+          {% endif %}
+          {% for pass in (1..passes) %}
+            {% for block in section.blocks %}
+              <div class="swiper-slide nw-video-carousel__slide"{% if pass == 1 %} {{ block.shopify_attributes }}{% endif %}>
+                <div class="nw-video-carousel__media">
+                  {% if block.settings.slider_video != blank %}
+                    {% if block.settings.slider_thumb != blank %}
+                      {% assign poster_url = block.settings.slider_thumb | image_url: width: 800 %}
+                      {{ block.settings.slider_video | video_tag: image_size: '800x', poster: poster_url, playsinline: true, preload: 'metadata', loop: section.settings.enable_video_loop, class: 'nw-video-carousel__video' }}
+                    {% else %}
+                      {{ block.settings.slider_video | video_tag: image_size: '800x', playsinline: true, preload: 'metadata', loop: section.settings.enable_video_loop, class: 'nw-video-carousel__video' }}
+                    {% endif %}
+                  {% elsif block.settings.slider_thumb != blank %}
+                    <img
+                      class="nw-video-carousel__thumb"
+                      src="{{ block.settings.slider_thumb | image_url: width: 800 }}"
+                      alt="{{ block.settings.slider_thumb.alt | default: shop.name | escape }}"
+                      width="{{ block.settings.slider_thumb.width }}"
+                      height="{{ block.settings.slider_thumb.height }}"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'nw-video-carousel__placeholder' }}
+                  {% endif %}
+
+                  <button type="button" class="nw-video-carousel__play" aria-label="Play video">
+                    <svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 25.2222L19.6623 12.6111L0 0V25.2222Z" fill="#FFFEFA"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </nw-video-carousel>
+  {% endif %}
+
+  {% if section.settings.show-hide-btn %}
+    <div class="nw-video_btn_wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+       {% render 'nw-button',
+            text: section.settings.button_text,
+            link: section.settings.button_link,
+            type: section.settings.button_type,
+            icon: section.settings.btn_icon
+          %}
+    </div>
+{% endif %}
+
+</div>
+
+{% schema %}
+{
+  "name": "NW Video Carousel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "SLIDER SETTINGS"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_loop",
+      "label": "Loop Videos",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable Autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_delay",
+      "label": "Autoplay Delay (Seconds)",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 3,
+      "unit": "s"
+    },
+    {
+      "type": "header",
+      "content": "SECTION HEADER"
+    },
+    {
+        "type": "range",
+        "default": 5,
+        "id": "star_rating",
+        "max": 5,
+        "min": 1,
+        "step": 1,
+        "label": "Rating"
+    },
+    {
+        "type": "color",
+        "id": "star-color",
+        "label": "Star Color",
+        "default": "#D78A15"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "HEADING"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Description....</p>"
+    },
+    {
+      "type": "header",
+      "content": "HEADER COLORS"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Color"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color"
+    },
+
+    {
+        "type": "header",
+        "content": "CTA BUTTON"
+    },
+    {
+        "type": "checkbox",
+        "label": "Show/Hide",
+        "default": false,
+        "id": "show-hide-btn"
+    },
+   {
+  "type": "text",
+  "id": "button_text",
+  "label": "Button Label",
+  "default": "see more love",
+  "visible_if": "{{ section.settings.show-hide-btn == true }}"
+},
+{
+  "type": "url",
+  "id": "button_link",
+  "label": "Button Link",
+  "visible_if": "{{ section.settings.show-hide-btn == true }}"
+},
+{
+  "type": "select",
+  "id": "button_type",
+  "label": "Button Type",
+  "default": "primary",
+  "options": [
+    {
+      "label": "Primary",
+      "value": "primary"
+    },
+    {
+      "label": "Secondary",
+      "value": "secondary"
+    }
+  ],
+  "visible_if": "{{ section.settings.show-hide-btn == true }}"
+},
+{
+      "type": "checkbox",
+      "id": "btn_icon",
+      "label": "Show Button Arrow Icon",
+      "default": true,
+       "visible_if": "{{ section.settings.show-hide-btn == true }}"
+    },
+
+     {
+      "type": "header",
+      "content": "BACKGROUND"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Background Type",
+      "default": "color",
+      "options": [
+        {
+          "value": "none",
+          "label": "None (Transparent)"
+        },
+        {
+          "value": "color",
+          "label": "Solid Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#F2E8D2",
+      "visible_if": "{{ section.settings.bg_type == 'color' }}"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_gradient",
+      "label": "Background Gradient",
+      "visible_if": "{{ section.settings.bg_type == 'gradient' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Desktop Background Image",
+      "visible_if": "{{ section.settings.bg_type == 'image' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Mobile Background Image",
+      "visible_if": "{{ section.settings.bg_type == 'image' }}"
+    },{
+      "type": "header",
+      "content": "SECTION SPACING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Desktop Top Padding",
+      "min": 0,
+      "max": 128,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Desktop Bottom Padding",
+      "min": 0,
+      "max": 128,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile Top Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile Bottom Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nw_video",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "SLIDE CONTENT"
+        },
+        {
+          "type": "video",
+          "id": "slider_video",
+          "label": "Video",
+          "info": "Use compressed video files in WebM format for better loading performance and reduced file sizes."
+        },
+        {
+          "type": "image_picker",
+          "id": "slider_thumb",
+          "label": "Thumbnail"
+        }
+      ]
+    }
+  ],
+  "tag": "section",
+  "presets": [
+    {
+      "name": "NW Video Carousel",
+      "category": "NW SECTIONS",
+      "blocks": [
+        {
+            "type": "nw_video"
+        },
+        {
+            "type": "nw_video"
+        },
+        {
+            "type": "nw_video"
+        },
+        {
+            "type": "nw_video"
+        },
+        {
+            "type": "nw_video"
+        },
+        {
+            "type": "nw_video",
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -98,40 +98,40 @@
         "bg_gradient": ""
       }
     },
-    "nw_logo_carousel_kmhER7": {
+    "nw_logo_carousel_QYTztD": {
       "type": "nw-logo-carousel",
       "blocks": {
-        "nw_logo_afhD6X": {
+        "nw_logo_LLkgXX": {
           "type": "nw_logo",
           "settings": {
             "slider_logo": "shopify://shop_images/logo-bb-1.png"
           }
         },
-        "nw_logo_tpRAt9": {
+        "nw_logo_MBFDjY": {
           "type": "nw_logo",
           "settings": {
             "slider_logo": "shopify://shop_images/logo-bb-2.png"
           }
         },
-        "nw_logo_UjkDTp": {
+        "nw_logo_XYfi7C": {
           "type": "nw_logo",
           "settings": {
             "slider_logo": "shopify://shop_images/logo-bb-3.png"
           }
         },
-        "nw_logo_8FBECg": {
+        "nw_logo_W8g7JD": {
           "type": "nw_logo",
           "settings": {
             "slider_logo": "shopify://shop_images/logo-bb-4.png"
           }
         },
-        "nw_logo_qCj6Bx": {
+        "nw_logo_kjEGrn": {
           "type": "nw_logo",
           "settings": {
             "slider_logo": "shopify://shop_images/logo-bb-5.png"
           }
         },
-        "nw_logo_tr77hD": {
+        "nw_logo_nEJPPj": {
           "type": "nw_logo",
           "settings": {
             "slider_logo": "shopify://shop_images/logo-bb-6.png"
@@ -139,12 +139,12 @@
         }
       },
       "block_order": [
-        "nw_logo_afhD6X",
-        "nw_logo_tpRAt9",
-        "nw_logo_UjkDTp",
-        "nw_logo_8FBECg",
-        "nw_logo_qCj6Bx",
-        "nw_logo_tr77hD"
+        "nw_logo_LLkgXX",
+        "nw_logo_MBFDjY",
+        "nw_logo_XYfi7C",
+        "nw_logo_W8g7JD",
+        "nw_logo_kjEGrn",
+        "nw_logo_nEJPPj"
       ],
       "name": "NW Logo Carousel",
       "settings": {
@@ -154,12 +154,85 @@
         "logo_gap_desktop": 52,
         "logo_gap_mobile": 40,
         "bg_type": "color",
-        "bg_color": "#3A2418",
+        "bg_color": "#3a2418",
         "bg_gradient": "",
         "padding_top_desktop": 24,
         "padding_bottom_desktop": 24,
         "padding_top_mobile": 16,
         "padding_bottom_mobile": 16
+      }
+    },
+    "nw_video_carousel_M3njen": {
+      "type": "nw-video-carousel",
+      "blocks": {
+        "nw_video_6KNqnP": {
+          "type": "nw_video",
+          "settings": {
+            "slider_video": "shopify://files/videos/720p_h264_10s.mp4",
+            "slider_thumb": "shopify://shop_images/Frame_48098020.png"
+          }
+        },
+        "nw_video_t9ipw4": {
+          "type": "nw_video",
+          "settings": {
+            "slider_video": "shopify://files/videos/720p_h264_10s.mp4",
+            "slider_thumb": "shopify://shop_images/Frame_48098021.png"
+          }
+        },
+        "nw_video_3BtnCm": {
+          "type": "nw_video",
+          "settings": {
+            "slider_video": "shopify://files/videos/720p_h264_10s.mp4",
+            "slider_thumb": "shopify://shop_images/Frame_48098017.png"
+          }
+        },
+        "nw_video_mjqC4d": {
+          "type": "nw_video",
+          "settings": {
+            "slider_video": "shopify://files/videos/720p_h264_10s.mp4",
+            "slider_thumb": "shopify://shop_images/Frame_48098019.png"
+          }
+        },
+        "nw_video_TzED8z": {
+          "type": "nw_video",
+          "settings": {
+            "slider_video": "shopify://files/videos/720p_h264_10s.mp4",
+            "slider_thumb": "shopify://shop_images/Frame_48098018.png"
+          }
+        }
+      },
+      "block_order": [
+        "nw_video_6KNqnP",
+        "nw_video_t9ipw4",
+        "nw_video_3BtnCm",
+        "nw_video_mjqC4d",
+        "nw_video_TzED8z"
+      ],
+      "name": "NW Video Carousel",
+      "settings": {
+        "enable_video_loop": true,
+        "enable_autoplay": true,
+        "autoplay_delay": 3,
+        "star_rating": 5,
+        "star-color": "#d78a15",
+        "eyebrow": "",
+        "heading": "&nbsp;25,000+ glowing customers&nbsp;",
+        "description": "<p>For those who like to read 100+ reviews before buying... here you go.</p>",
+        "eyebrow_color": "",
+        "heading_color": "",
+        "description_color": "",
+        "show-hide-btn": true,
+        "button_text": "see more love",
+        "button_link": "",
+        "button_type": "secondary",
+        "btn_icon": true,
+        "bg_type": "color",
+        "bg_color": "#f2e8d2",
+        "bg_gradient": "",
+        "padding_top_desktop": 128,
+        "padding_bottom_desktop": 128,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
       }
     }
   },
@@ -167,6 +240,7 @@
     "nw_hero_RrikbP",
     "nw_collection_cCwWNR",
     "nw_split_banner_zmTJz6",
-    "nw_logo_carousel_kmhER7"
+    "nw_logo_carousel_QYTztD",
+    "nw_video_carousel_M3njen"
   ]
 }
