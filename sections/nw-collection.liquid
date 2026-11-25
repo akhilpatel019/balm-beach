@@ -15,7 +15,7 @@
       {% assign nw_collection = section.settings.selected_collection %}
 
       {% if nw_collection != blank %}
-        {% for product in nw_collection.products  reversed %}
+        {% for product in nw_collection.products reversed %}
           <div
             class="nw-collection_card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
@@ -168,9 +168,7 @@
           >
             <!-- Product Image & Badge -->
             <div class="nw-collection_img_wrapper">
-              <div class="nw-product_ad" style="background-color: #4E8197;">
-                Ad Text
-              </div>
+              <div class="nw-product_ad" style="background-color: #4E8197;">Ad Text</div>
 
               <div class="product-img_wrapper">
                 {{ 'product-apparel-' | append: i | placeholder_svg_tag: 'nw-collection_card_image placeholder-svg' }}
@@ -182,9 +180,7 @@
 
             <!-- Product Title & Price -->
             <div class="nw-collection_card_title_price">
-              <div class="product_title">
-                Product Title
-              </div>
+              <div class="product_title">Product Title</div>
 
               <div class="product_price">
                 {{ 4000 | money }}
@@ -210,24 +206,29 @@
 
             <!-- Product Description -->
             <div class="nw-collection_card_description">
-              <div class="product_desc">
-                Product Description 
-              </div>
+              <div class="product_desc">Product Description</div>
             </div>
 
             <!-- Add to Cart Button -->
             <div class="nw-collection_card_cart_btn">
-              <button type="button" class="nw-shop-now-btn" disabled>
-                Shop Now
-              </button>
+              <button type="button" class="nw-shop-now-btn" disabled>Shop Now</button>
             </div>
           </div>
         {% endfor %}
       {% endif %}
-
-     
-
     </div>
+
+{% if section.settings.show-hide-btn %}
+    <div class="nw-collection_btn_wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+       {% render 'nw-button',
+            text: section.settings.button_text,
+            link: section.settings.button_link,
+            type: section.settings.button_type,
+            icon: section.settings.btn_icon
+          %}
+    </div>
+{% endif %}
+
   </div>
 </div>
 
@@ -237,6 +238,16 @@
   "tag": "section",
   "class": "section",
   "settings": [
+
+    {
+      "type": "header",
+      "content": "COLLECTION"
+    },
+    {
+      "type": "collection",
+      "id": "selected_collection",
+      "label": "Select Collection"
+    },
     {
       "type": "header",
       "content": "SECTION HEADER"
@@ -298,16 +309,54 @@
       "id": "description_color",
       "label": "Description Color"
     },
-    {
-      "type": "header",
-      "content": "COLLECTION"
+     {
+        "type": "header",
+        "content": "CTA BUTTON"
     },
     {
-      "type": "collection",
-      "id": "selected_collection",
-      "label": "Select Collection"
+        "type": "checkbox",
+        "label": "Show/Hide",
+        "default": false,
+        "id": "show-hide-btn"
+    },
+   {
+  "type": "text",
+  "id": "button_text",
+  "label": "Button Label",
+  "default": "shop all skin care",
+  "visible_if": "{{ section.settings.show-hide-btn == true }}"
+},
+{
+  "type": "url",
+  "id": "button_link",
+  "label": "Button Link",
+  "visible_if": "{{ section.settings.show-hide-btn == true }}"
+},
+{
+  "type": "select",
+  "id": "button_type",
+  "label": "Button Type",
+  "default": "primary",
+  "options": [
+    {
+      "label": "Primary",
+      "value": "primary"
     },
     {
+      "label": "Secondary",
+      "value": "secondary"
+    }
+  ],
+  "visible_if": "{{ section.settings.show-hide-btn == true }}"
+},
+{
+      "type": "checkbox",
+      "id": "btn_icon",
+      "label": "Show Button Arrow Icon",
+      "default": true,
+       "visible_if": "{{ section.settings.show-hide-btn == true }}"
+    },
+   {
       "type": "header",
       "content": "BACKGROUND"
     },

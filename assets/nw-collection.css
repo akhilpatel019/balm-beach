@@ -12,6 +12,12 @@
     row-gap: 28px;
 }
 
+.nw-collection_btn_wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
 /* Card Root */
 .nw-collection_card {
   display: flex;
@@ -240,6 +246,11 @@ font-family: var(--font-body-family);
     gap: 22px;
   }
 
+  .nw-collection{
+    padding-top: 68px !important;
+    padding-bottom: 68px !important;
+  }
+
   .nw-product_ad {
     font-size: 11px;
     padding: 7px 10px;
@@ -350,6 +361,14 @@ font-family: var(--font-body-family);
 
 .nw-product_ad + .product-img_wrapper .product_seller_tag {
     top: 30px;
+}
+
+.nw-collection_btn_wrapper{
+  margin-top: 48px;
+}
+
+.nw-collection .nw-section-heading{
+   font-size: 52px;
 }
 
 }

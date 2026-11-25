@@ -1,0 +1,132 @@
+/* ========================================================
+   NW Split Banner Section Layout Styles
+   ======================================================== */
+
+/* --------------------------------------------------------
+   1. Base Styles (Mobile First)
+   -------------------------------------------------------- */
+.nw-split-banner {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+.nw-split-banner_wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.nw-split-banner_image {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.nw-split-banner_image picture,
+.nw-split-banner_image img,
+.nw-split-banner_image .nw-split-banner_placeholder {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nw-split-banner_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+
+.banner_content {
+    width: 100%;
+    max-width: 613px;
+    margin: 0 auto;
+}
+
+.banner_content .nw-section-header {
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.banner_content .nw-section-description {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.banner_content .nw-btn {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.banner_content .nw-btn{
+  min-height: 49px;
+}
+
+.banner_content .nw-section-header {
+    margin-bottom: 16px;
+    gap: 11px;
+  }
+
+
+/* --------------------------------------------------------
+   2. Tablet (750px and above)
+   -------------------------------------------------------- */
+@media screen and (min-width: 750px) {
+  .nw-split-banner_wrapper {
+    grid-template-columns: 1fr 1fr;
+    min-height: auto;
+  }
+
+  .nw-split-banner_image {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  .nw-split-banner_content {
+    padding: 56px 40px !important;
+  }
+
+  .banner_content .nw-btn {
+    width: auto;
+  }
+}
+
+
+/* --------------------------------------------------------
+   3. Desktop (990px and above)
+   -------------------------------------------------------- */
+@media screen and (min-width: 990px) {
+  .nw-split-banner_wrapper {
+    min-height: 640px;
+  }
+
+  .nw-split-banner_content {
+    padding: 0px 64px;
+  }
+
+  .banner_content .nw-section-header {
+    margin-bottom: 24px;
+    gap: 24px;
+  }
+  .nw-split-banner .nw-section-heading{
+   font-size: 52px;
+}
+
+.nw-split-banner .rte {
+    font-size: 17px;
+}
+
+
+}
+
+
+.nw-split-banner.section-template--28096896598125__nw_split_banner_zmTJz6 {
+    padding-top: 0px; 
+     padding-bottom: 0px;
+}
