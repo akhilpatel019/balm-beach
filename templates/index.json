@@ -44,9 +44,31 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 48
       }
+    },
+    "nw_collection_cCwWNR": {
+      "type": "nw-collection",
+      "name": "NW Collection",
+      "settings": {
+        "eyebrow": "find your vibe",
+        "heading": "&nbsp;feel good skin care.&nbsp;",
+        "description": "<p>Soft creamy tallow balms with clean ingredients and addictive <em>natural</em> scents.</p>",
+        "header_alignment": "center",
+        "eyebrow_color": "#D88A14",
+        "heading_color": "",
+        "description_color": "",
+        "selected_collection": "balm-beach",
+        "bg_type": "color",
+        "bg_color": "#f2e8d2",
+        "bg_gradient": "",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
     }
   },
   "order": [
-    "nw_hero_RrikbP"
+    "nw_hero_RrikbP",
+    "nw_collection_cCwWNR"
   ]
 }

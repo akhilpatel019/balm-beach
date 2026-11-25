@@ -6,9 +6,10 @@
    1. Base Styles (Mobile First)
    -------------------------------------------------------- */
 .nw-collection__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    column-gap: 12px;
+    row-gap: 28px;
 }
 
 /* Card Root */
@@ -25,29 +26,28 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
   background-color: var(--nw-bone, #FCF7EB);
 }
 
 .nw-product_ad {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: #4d7a88;
-  color: #ffffff;
-  text-align: center;
-  font-family: var(--font-body-family);
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 6px 8px;
-  box-sizing: border-box;
-  z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: #f2e8d2;
+    text-align: center;
+    font-family: var(--font-body-family);
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 14px;
+    box-sizing: border-box;
+    z-index: 2;
 }
 
 .nw-collection_card_image {
@@ -59,24 +59,62 @@
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.product-img_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.product_seller_tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.nw-product_ad + .product-img_wrapper .product_seller_tag {
+  top: 40px;
+}
+
+.best_seller_tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 6px 8px;
+    border-radius: 999px;
+    background-color: #fcf7eb;
+    color: var(--nw-espresso, #3A2418);
+    font-family: var(--font-body-family);
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 7px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+
 /* Title & Price */
 .nw-collection_card_title_price {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-  margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 12px;
+    flex-direction: column;
 }
 
 .product_title {
-  font-family: var(--font-heading-family);
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--nw-espresso, #3A2418);
-  flex: 1;
+    font-family: var(--font-heading-family);
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 14.7px;
+    letter-spacing: 1.08px;
+    text-transform: uppercase;
+    color: var(--nw-espresso, #3A2418);
+    flex: 1;
 }
 
 .product_title a {
@@ -85,11 +123,11 @@
 }
 
 .product_price {
-  font-family: var(--font-heading-family);
+   font-family: var(--font-body-family);
   font-size: 14px;
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  line-height: 19.5px;
+  letter-spacing: 1.04px;
   color: var(--nw-espresso, #3A2418);
   white-space: nowrap;
   text-align: right;
@@ -107,6 +145,7 @@
   display: inline-flex;
   align-items: center;
   gap: 2px;
+  line-height: 1;
 }
 
 .product_rating_start img {
@@ -117,11 +156,14 @@
 }
 
 .product_review {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-body-family);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 500;
   line-height: 1;
-  color: #D78A15;
+  color: var(--nw-sun-deep);
+  letter-spacing: 0.02em;
 }
 
 /* Description */
@@ -131,10 +173,12 @@
 
 .product_desc {
   font-family: var(--font-body-family);
-  font-size: 12px;
-  line-height: 1.35;
-  color: var(--nw-cocoa, #6B4427);
+  font-size: 13px;
+  line-height: 19.5px;
+  color: #8B7259;
   margin: 0;
+  letter-spacing: 2%;
+  font-weight: 400;
 }
 
 /* Add to Cart Button */
@@ -143,7 +187,8 @@
 }
 
 .nw-collection_card_cart_btn form {
-  display: inline-block;
+  display: block;
+  width: 100%;
   margin: 0;
 }
 
@@ -151,17 +196,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   padding: 10px 22px;
   min-height: 42px;
-  background-color: #ffffff;
+  background-color: transparent;
   color: var(--nw-espresso, #3A2418);
   border: 1px solid var(--nw-espresso, #3A2418);
-  border-radius: 0;
-  font-family: var(--font-heading-family);
+  border-radius: 2px;
+font-family: var(--font-body-family);
   font-size: 12px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 2.34px;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
@@ -213,10 +259,10 @@
     font-size: 15px;
   }
 
-  .nw-collection_card_rating_wrapper {
-    margin-top: 8px;
+ .nw-collection_card_rating_wrapper {
+    margin-top: 11px;
     gap: 8px;
-  }
+}
 
   .product_rating_start img {
     width: 14px;
@@ -227,24 +273,30 @@
     font-size: 13px;
   }
 
-  .nw-collection_card_description {
-    margin-top: 8px;
-  }
+.nw-collection_card_description {
+    margin-top: 11px;
+}
 
   .product_desc {
     font-size: 13px;
-    line-height: 1.4;
   }
 
-  .nw-collection_card_cart_btn {
-    margin-top: 16px;
+ .nw-collection_card_cart_btn {
+    margin-top: 11px;
+}
+
+  .nw-collection_card_cart_btn form {
+    display: inline-block;
+    width: auto;
   }
 
   .nw-shop-now-btn {
+    width: auto;
     padding: 12px 26px;
     min-height: 46px;
     font-size: 13px;
   }
+  
 }
 
 
@@ -263,29 +315,49 @@
 
   .nw-product_ad {
     font-size: 11px;
-    padding: 7px 12px;
+    padding: 6px 26.45px;
   }
 
-  .nw-collection_card_title_price {
-    margin-top: 16px;
+.nw-collection_card_title_price {
+    margin-top: 11px;
     gap: 12px;
-  }
+    flex-direction: row;
+}
 
   .product_title {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .product_price {
-    font-size: 16px;
-  }
-
-  .product_desc {
     font-size: 14px;
   }
 
-  .nw-shop-now-btn {
-    padding: 14px 28px;
-    min-height: 48px;
+  .product_desc {
     font-size: 13px;
   }
+
+  .nw-shop-now-btn {
+    padding: 20px 36px;
+    font-size: 13px;
+    min-height: 56px;
+}
+
+.best_seller_tag {
+    font-size: 10px;
+    padding: 6px 10px;
+    line-height: 15px;
+}
+
+.nw-product_ad + .product-img_wrapper .product_seller_tag {
+    top: 30px;
+}
+
+}
+
+
+@media screen and (max-width: 480px) {
+      .nw-product_ad+.product-img_wrapper .product_seller_tag {
+    top: 20px;
+    left: 6px;
+}
 }
