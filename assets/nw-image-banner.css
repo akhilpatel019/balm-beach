@@ -1,0 +1,131 @@
+/* ========================================================
+   NW Image Banner Section Layout Styles
+   ======================================================== */
+
+/* --------------------------------------------------------
+   1. Base Styles (Mobile First)
+   -------------------------------------------------------- */
+.nw-image-banner {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nw-image-banner_wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 24px;
+  width: 100%;
+}
+
+.nw-image-banner_content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nw-image-banner_content .nw-section-header {
+  margin-bottom: 16px;
+}
+
+.nw-image-banner_content .nw-section-header {
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.nw-image-banner_content .nw-section-description {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+.nw-image-banner_content .nw-section-eyebrow{
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 2px;
+}
+
+.nw-image-banner_cta {
+  width: 100%;
+}
+
+.nw-image-banner_cta .nw-btn {
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.nw-image-banner_image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nw-image-banner_image .nw-banner-image {
+  display: block;
+  width: 100%;
+}
+
+.nw-image-banner_image .nw-banner-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------
+   2. Tablet (750px and above)
+   -------------------------------------------------------- */
+@media screen and (min-width: 750px) {
+  .nw-image-banner_wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nw-image-banner_content {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+
+  .nw-image-banner_content .nw-section-header {
+    margin-bottom: 24px;
+  }
+
+  .nw-image-banner_cta .nw-btn {
+    width: auto;
+  }
+
+  .nw-image-banner_image {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+
+
+
+  .nw-image-banner_image .nw-banner-image img {
+    max-width: 100%;
+  }
+}
+
+/* --------------------------------------------------------
+   3. Desktop (990px and above)
+   -------------------------------------------------------- */
+@media screen and (min-width: 990px) {
+  .nw-image-banner_wrapper{
+    gap: 40px;
+  }
+
+  .nw-image-banner_content .nw-section-heading {
+    font-size: 52px;
+}
+
+.nw-image-banner_content .rte {
+    font-size: 16px;
+}
+
+.nw-image-banner_content .nw-section-header{
+    gap: 24px;
+}
+
+}

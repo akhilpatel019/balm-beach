@@ -1,0 +1,285 @@
+{% assign shell_selector = '.nw-image-banner.section-' | append: section.id %}
+{% render 'nw-section-shell'
+  , selector: shell_selector %}
+
+{{ 'nw-image-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="nw-image-banner section-{{ section.id }}">
+  <div class="page-width">
+    <div class="nw-image-banner_wrapper">
+      <div
+        class="nw-image-banner_content{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+        data-cascade
+        style="--animation-order: 1;"
+        {% endif %}>
+        {% render 'nw-section-header' %}
+
+        {% if section.settings.show-hide-btn and section.settings.button_text != blank %}
+          <div
+            class="nw-image-banner_cta{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: 2;"
+            {% endif %}>
+            {% render 'nw-button'
+              ,
+ text: section.settings.button_text
+              ,
+ link: section.settings.button_link
+              ,
+ type: section.settings.button_type
+              ,
+ icon: section.settings.btn_icon
+            %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="nw-image-banner_image{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+
+        {% if section.settings.banner_image_desktop != blank or section.settings.banner_image_mobile != blank %}
+          <picture class="nw-banner-image">
+            {% if section.settings.banner_image_mobile != blank %}
+              <source media="(max-width: 749px)" srcset="{{ section.settings.banner_image_mobile | image_url: width: 1000 }}">
+            {% endif %}
+
+            {% if section.settings.banner_image_desktop != blank %}
+              <img
+                src="{{ section.settings.banner_image_desktop | image_url: width: 2000 }}"
+                alt="{{ section.settings.banner_image_desktop.alt | default: section.settings.banner_image_mobile.alt | escape }}"
+                width="{{ section.settings.banner_image_desktop.width }}"
+                height="{{ section.settings.banner_image_desktop.height }}"
+                loading="lazy">
+            {% elsif section.settings.banner_image_mobile != blank %}
+              <img
+                src="{{ section.settings.banner_image_mobile | image_url: width: 1000 }}"
+                alt="{{ section.settings.banner_image_mobile.alt | escape }}"
+                width="{{ section.settings.banner_image_mobile.width }}"
+                height="{{ section.settings.banner_image_mobile.height }}"
+                loading="lazy">
+            {% endif %}
+          </picture>
+        {% else %}
+          <picture class="nw-banner-image">
+            <img
+              class="nw-image-banner_placeholder"
+              src="{{ 'banner_placeholder_img.webp' | asset_url }}"
+              alt="{{ section.settings.heading | default: 'Banner placeholder' | escape }}"
+              width="1200"
+              height="1200"
+              loading="lazy">
+          </picture>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "NW Image Banner",
+    "settings": [
+      {
+        "type": "header",
+        "content": "SECTION HEADER"
+      },
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow Text",
+        "default": "methylene blue infused tallow balm"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description",
+        "default": "<p>Description</p>"
+      }, {
+        "type": "select",
+        "id": "header_alignment",
+        "label": "Header Alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      }, {
+        "type": "header",
+        "content": "HEADER COLORS"
+      }, {
+        "type": "color",
+        "id": "eyebrow_color",
+        "label": "Eyebrow Color",
+        "default": "#FFFEFA"
+      }, {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "default": "#FFFEFA"
+      }, {
+        "type": "color",
+        "id": "description_color",
+        "label": "Description Color",
+        "default": "#FFFEFA"
+      }, {
+        "type": "header",
+        "content": "CTA BUTTON"
+      }, {
+        "type": "checkbox",
+        "label": "Show/Hide",
+        "default": false,
+        "id": "show-hide-btn"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Label",
+        "default": "shop all skin care",
+        "visible_if": "{{ section.settings.show-hide-btn == true }}"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link",
+        "visible_if": "{{ section.settings.show-hide-btn == true }}"
+      }, {
+        "type": "select",
+        "id": "button_type",
+        "label": "Button Type",
+        "default": "primary",
+        "options": [
+          {
+            "label": "Primary",
+            "value": "primary"
+          }, {
+            "label": "Secondary",
+            "value": "secondary"
+          }
+        ],
+        "visible_if": "{{ section.settings.show-hide-btn == true }}"
+      }, {
+        "type": "checkbox",
+        "id": "btn_icon",
+        "label": "Show Button Arrow Icon",
+        "default": true,
+        "visible_if": "{{ section.settings.show-hide-btn == true }}"
+      }, {
+        "type": "header",
+        "content": "BANNER IMAGE"
+      }, {
+        "type": "image_picker",
+        "id": "banner_image_desktop",
+        "label": "Image(Desktop)"
+      }, {
+        "type": "image_picker",
+        "id": "banner_image_mobile",
+        "label": "Image(Mobile)"
+      }, {
+        "type": "header",
+        "content": "BACKGROUND"
+      }, {
+        "type": "select",
+        "id": "bg_type",
+        "label": "Background Type",
+        "default": "color",
+        "options": [
+          {
+            "value": "none",
+            "label": "None (Transparent)"
+          }, {
+            "value": "color",
+            "label": "Solid Color"
+          }, {
+            "value": "gradient",
+            "label": "Gradient"
+          }, {
+            "value": "image",
+            "label": "Image"
+          }
+        ]
+      }, {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#3A2418",
+        "visible_if": "{{ section.settings.bg_type == 'color' }}"
+      }, {
+        "type": "color_background",
+        "id": "bg_gradient",
+        "label": "Background Gradient",
+        "visible_if": "{{ section.settings.bg_type == 'gradient' }}"
+      }, {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Desktop Background Image",
+        "visible_if": "{{ section.settings.bg_type == 'image' }}"
+      }, {
+        "type": "image_picker",
+        "id": "bg_image_mobile",
+        "label": "Mobile Background Image",
+        "visible_if": "{{ section.settings.bg_type == 'image' }}"
+      }, {
+        "type": "header",
+        "content": "SECTION SPACING"
+      }, {
+        "type": "range",
+        "id": "padding_top_desktop",
+        "label": "Desktop Top Padding",
+        "min": 0,
+        "max": 128,
+        "step": 4,
+        "unit": "px",
+        "default": 60
+      }, {
+        "type": "range",
+        "id": "padding_bottom_desktop",
+        "label": "Desktop Bottom Padding",
+        "min": 0,
+        "max": 128,
+        "step": 4,
+        "unit": "px",
+        "default": 60
+      }, {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "label": "Mobile Top Padding",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "default": 40
+      }, {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "label": "Mobile Bottom Padding",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "default": 40
+      }
+    ],
+    "blocks": [],
+    "tag": "section",
+    "presets": [
+      {
+        "name": "NW Image Banner",
+        "category": "NW SECTIONS"
+      }
+    ]
+  }
+{% endschema %}

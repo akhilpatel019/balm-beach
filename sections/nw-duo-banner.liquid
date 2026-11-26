@@ -48,25 +48,25 @@
       "id": "bg_color",
       "label": "Background Color",
       "default": "#F2E8D2",
-      "visible_if": "{{ block.settings.bg_type == 'color' }}"
+      "visible_if": "{{ section.settings.bg_type == 'color' }}"
     },
     {
       "type": "color_background",
       "id": "bg_gradient",
       "label": "Background Gradient",
-      "visible_if": "{{ block.settings.bg_type == 'gradient' }}"
+      "visible_if": "{{ section.settings.bg_type == 'gradient' }}"
     },
     {
       "type": "image_picker",
       "id": "bg_image",
       "label": "Desktop Background Image",
-      "visible_if": "{{ block.settings.bg_type == 'image' }}"
+      "visible_if": "{{ section.settings.bg_type == 'image' }}"
     },
     {
       "type": "image_picker",
       "id": "bg_image_mobile",
       "label": "Mobile Background Image",
-      "visible_if": "{{ block.settings.bg_type == 'image' }}"
+      "visible_if": "{{ section.settings.bg_type == 'image' }}"
     },
     {
       "type": "header",
@@ -253,13 +253,13 @@
           "id": "button_text",
           "label": "Button Label",
           "default": "see more love",
-          "visible_if": "{{ block.settings.show-hide-btn == true }}"
+          "visible_if": "{{ section.settings.show-hide-btn == true }}"
         },
         {
           "type": "url",
           "id": "button_link",
           "label": "Button Link",
-          "visible_if": "{{ block.settings.show-hide-btn == true }}"
+          "visible_if": "{{ section.settings.show-hide-btn == true }}"
         },
         {
           "type": "select",
@@ -276,14 +276,14 @@
               "value": "secondary"
             }
           ],
-          "visible_if": "{{ block.settings.show-hide-btn == true }}"
+          "visible_if": "{{ section.settings.show-hide-btn == true }}"
         },
         {
           "type": "checkbox",
           "id": "btn_icon",
           "label": "Show Button Arrow Icon",
           "default": true,
-          "visible_if": "{{ block.settings.show-hide-btn == true }}"
+          "visible_if": "{{ section.settings.show-hide-btn == true }}"
         }
       ]
     }
