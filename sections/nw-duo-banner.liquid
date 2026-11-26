@@ -253,13 +253,13 @@
           "id": "button_text",
           "label": "Button Label",
           "default": "see more love",
-          "visible_if": "{{ section.settings.show-hide-btn == true }}"
+          "visible_if": "{{ block.settings.show-hide-btn == true }}"
         },
         {
           "type": "url",
           "id": "button_link",
           "label": "Button Link",
-          "visible_if": "{{ section.settings.show-hide-btn == true }}"
+          "visible_if": "{{ block.settings.show-hide-btn == true }}"
         },
         {
           "type": "select",
@@ -276,14 +276,35 @@
               "value": "secondary"
             }
           ],
-          "visible_if": "{{ section.settings.show-hide-btn == true }}"
+          "visible_if": "{{ block.settings.show-hide-btn == true }}"
         },
         {
           "type": "checkbox",
           "id": "btn_icon",
           "label": "Show Button Arrow Icon",
           "default": true,
-          "visible_if": "{{ section.settings.show-hide-btn == true }}"
+          "visible_if": "{{ block.settings.show-hide-btn == true }}"
+        },
+        {
+          "type": "select",
+          "id": "button_alignment",
+          "label": "Button Alignment",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "visible_if": "{{ block.settings.show-hide-btn == true }}"
         }
       ]
     }

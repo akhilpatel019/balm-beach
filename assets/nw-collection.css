@@ -13,8 +13,7 @@
 }
 
 .nw-collection_btn_wrapper{
-  display: flex;
-  justify-content: center;
+  width: 100%;
   margin-top: 28px;
 }
 

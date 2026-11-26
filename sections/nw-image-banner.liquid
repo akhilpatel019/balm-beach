@@ -31,6 +31,8 @@
  type: section.settings.button_type
               ,
  icon: section.settings.btn_icon
+              ,
+ align: section.settings.button_alignment
             %}
           </div>
         {% endif %}
@@ -176,6 +178,26 @@
         "id": "btn_icon",
         "label": "Show Button Arrow Icon",
         "default": true,
+        "visible_if": "{{ section.settings.show-hide-btn == true }}"
+      }, {
+        "type": "select",
+        "id": "button_alignment",
+        "label": "Button Alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
         "visible_if": "{{ section.settings.show-hide-btn == true }}"
       }, {
         "type": "header",

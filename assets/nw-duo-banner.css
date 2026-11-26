@@ -69,6 +69,10 @@
   width: 100%;
 }
 
+.nw-banner-btn-wrapper {
+  width: 100%;
+}
+
 /* Badge */
 .nw-banner-box__badge {
     display: inline-block;

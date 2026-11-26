@@ -73,6 +73,24 @@
 }
 
 
+/* Button alignment wrapper */
+.nw-btn-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.nw-btn-wrapper--left {
+  justify-content: flex-start;
+}
+
+.nw-btn-wrapper--center {
+  justify-content: center;
+}
+
+.nw-btn-wrapper--right {
+  justify-content: flex-end;
+}
+
 @media screen and (max-width: 480px) {
     .nw-btn{
         width: 100%;

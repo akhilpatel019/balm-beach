@@ -85,8 +85,6 @@
 
 .nw-location-table__cta {
   margin-top: 28px;
-  display: flex;
-  justify-content: flex-start;
   width: 100%;
 }
 
@@ -95,6 +93,12 @@
   .nw-location-table .nw-section-header {
     gap: 24px;
     margin-bottom: 24px;
+}
+
+@media screen and (max-width: 480px) {
+.nw-location-table .nw-btn {
+    min-height: 49px;
+}
 }
 
 /* --------------------------------------------------------

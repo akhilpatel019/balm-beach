@@ -5,7 +5,8 @@
   text: section.settings.button_text,
   link: section.settings.button_link,
   type: section.settings.button_type,
-  icon: section.settings.btn_icon
+  icon: section.settings.btn_icon,
+  align: section.settings.button_alignment
 %}
 {% enddoc %}
 
@@ -14,9 +15,14 @@
   assign btn_text = text
   assign btn_link = link
   assign btn_icon = icon
+  assign btn_align = align
 %}
 
 {% if btn_text != blank %}
+  {% if btn_align != blank %}
+    <div class="nw-btn-wrapper nw-btn-wrapper--{{ btn_align }}">
+  {% endif %}
+
   <a href="{{ btn_link | default: '#' }}"
      class="nw-btn {% if btn_type == 'primary' %}nw-btn-primary{% else %}nw-btn-secondary{% endif %}">
 
@@ -29,4 +35,8 @@
     {% endif %}
 
   </a>
+
+  {% if btn_align != blank %}
+    </div>
+  {% endif %}
 {% endif %}
