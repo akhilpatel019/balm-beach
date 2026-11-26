@@ -234,6 +234,69 @@
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
       }
+    },
+    "nw_duo_banner_mKED3h": {
+      "type": "nw-duo-banner",
+      "blocks": {
+        "nw_banner_box_rz3ghT": {
+          "type": "nw-banner-box",
+          "settings": {
+            "bg_type": "image",
+            "bg_color": "#f2e8d2",
+            "bg_gradient": "",
+            "bg_image": "shopify://shop_images/Div_block.webp",
+            "banner_alignment": "Bottom",
+            "banner_badge": "new",
+            "badge_color": "#3a2418",
+            "badge_bg_color": "#fcf7eb",
+            "banner_title": "Tallow sunscreen spray&nbsp;",
+            "banner_title_color": "#ffffff",
+            "banner_description": "<p>The first of it’s kind. The healthiest sunscreen out there.</p>",
+            "banner_desc_color": "#ffffff",
+            "show-hide-btn": true,
+            "button_text": "stock your bag",
+            "button_link": "shopify://collections/balm-beach",
+            "button_type": "primary",
+            "btn_icon": true
+          }
+        },
+        "nw_banner_box_DATA8h": {
+          "type": "nw-banner-box",
+          "settings": {
+            "bg_type": "image",
+            "bg_color": "#f2e8d2",
+            "bg_gradient": "",
+            "bg_image": "shopify://shop_images/Div_block_1.webp",
+            "banner_alignment": "Bottom",
+            "banner_badge": "",
+            "badge_color": "#3a2418",
+            "badge_bg_color": "#fcf7eb",
+            "banner_title": "The sun dream bundle",
+            "banner_title_color": "#ffffff",
+            "banner_description": "<p>Moisturize in the morning. Protect from the sun. Heal at night.</p>",
+            "banner_desc_color": "#ffffff",
+            "show-hide-btn": true,
+            "button_text": "Shop the bundle",
+            "button_link": "",
+            "button_type": "primary",
+            "btn_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "nw_banner_box_rz3ghT",
+        "nw_banner_box_DATA8h"
+      ],
+      "name": "NW Duo Banner",
+      "settings": {
+        "bg_type": "color",
+        "bg_color": "#f2e8d2",
+        "bg_gradient": "",
+        "padding_top_desktop": 28,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 48
+      }
     }
   },
   "order": [
@@ -241,6 +304,7 @@
     "nw_collection_cCwWNR",
     "nw_split_banner_zmTJz6",
     "nw_logo_carousel_QYTztD",
-    "nw_video_carousel_M3njen"
+    "nw_video_carousel_M3njen",
+    "nw_duo_banner_mKED3h"
   ]
 }

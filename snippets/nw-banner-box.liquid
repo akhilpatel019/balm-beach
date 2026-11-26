@@ -1,0 +1,101 @@
+{%- liquid
+  assign b = block.settings
+
+  assign banner_bg_style = ''
+  if b.bg_type == 'color' and b.bg_color != blank and b.bg_color != 'rgba(0,0,0,0)'
+    assign banner_bg_style = 'background-color: ' | append: b.bg_color | append: ';'
+  elsif b.bg_type == 'gradient' and b.bg_gradient != blank
+    assign banner_bg_style = 'background: ' | append: b.bg_gradient | append: ';'
+  elsif b.bg_type == 'image'
+    if b.bg_image != blank
+      assign banner_img_url = b.bg_image | image_url: width: 1600
+      assign banner_bg_style = 'background-image: url(' | append: banner_img_url | append: '); background-size: cover; background-position: center;'
+    endif
+  endif
+
+  assign valign = b.banner_alignment | default: 'flex-end'
+  if b.banner_alignment == 'baseline'
+    assign valign = 'flex-start'
+  elsif b.banner_alignment == 'center'
+    assign valign = 'center'
+  elsif b.banner_alignment == 'Bottom'
+    assign valign = 'flex-end'
+  endif
+-%}
+
+<div
+  class="nw-banner-box{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  style="--banner-valign: {{ valign }}; {{ banner_bg_style }}"
+  {{ block.shopify_attributes }}
+>
+  {%- if b.bg_type == 'image' -%}
+    <picture class="nw-banner-box__picture">
+      {%- if b.bg_image != blank -%}
+        {%- if b.bg_image_mobile != blank -%}
+          <source media="(max-width: 749px)" srcset="{{ b.bg_image_mobile | image_url: width: 800 }}">
+        {%- endif -%}
+        <img
+          class="nw-banner-box__bg-img"
+          src="{{ b.bg_image | image_url: width: 1600 }}"
+          alt="{{ b.bg_image.alt | default: shop.name | escape }}"
+          width="{{ b.bg_image.width }}"
+          height="{{ b.bg_image.height }}"
+          loading="lazy"
+        >
+      {%- else -%}
+        <img
+          class="nw-banner-box__bg-img nw-banner-box__bg-img--placeholder"
+          src="{{ 'nw-banner-placeholder.webp' | asset_url }}"
+          alt="Banner placeholder"
+          width="500"
+          height="500"
+          loading="lazy"
+        >
+      {%- endif -%}
+    </picture>
+  {%- endif -%}
+
+  <div class="nw-banner-box__content">
+    {%- if b.banner_badge != blank -%}
+      <span
+        class="nw-banner-box__badge{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        style="color: {{ b.badge_color }}; background-color: {{ b.badge_bg_color }};"
+      >
+        {{ b.banner_badge }}
+      </span>
+    {%- endif -%}
+
+    {%- if b.banner_title != blank -%}
+      <h2
+        class="nw-banner-box__title{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if b.banner_title_color != blank and b.banner_title_color != 'rgba(0,0,0,0)' %}
+          style="color: {{ b.banner_title_color }};"
+        {% endif %}
+      >
+        {{ b.banner_title }}
+      </h2>
+    {%- endif -%}
+
+    {%- if b.banner_description != blank -%}
+      <div
+        class="nw-banner-box__desc rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if b.banner_desc_color != blank and b.banner_desc_color != 'rgba(0,0,0,0)' %}
+          style="color: {{ b.banner_desc_color }};"
+        {% endif %}
+      >
+        {{ b.banner_description }}
+      </div>
+    {%- endif -%}
+
+    {%- if b['show-hide-btn'] == true and b.button_text != blank -%}
+      <div class="nw-banner-btn-wrapper {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+        {% render 'nw-button',
+          text: b.button_text,
+          link: b.button_link,
+          type: b.button_type,
+          icon: b.btn_icon
+        %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

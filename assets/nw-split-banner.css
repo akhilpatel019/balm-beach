@@ -88,12 +88,16 @@
     height: 100%;
   }
 
-  .nw-split-banner_content {
-    padding: 56px 40px !important;
-  }
+  
 
   .banner_content .nw-btn {
     width: auto;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .nw-split-banner_content {
+    padding: 56px 40px;
   }
 }
 

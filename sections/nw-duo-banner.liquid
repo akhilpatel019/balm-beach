@@ -1,0 +1,307 @@
+{% assign shell_selector = '.nw-duo-banner.section-' | append: section.id %}
+{% render 'nw-section-shell', selector: shell_selector %}
+
+{{ 'nw-duo-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="nw-duo-banner section-{{ section.id }}">
+  <div class="nw-duo-banner__grid">
+    {% for block in section.blocks %}
+      {% render 'nw-banner-box', block: block %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "NW Duo Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "BACKGROUND"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Background Type",
+      "default": "color",
+      "options": [
+        {
+          "value": "none",
+          "label": "None (Transparent)"
+        },
+        {
+          "value": "color",
+          "label": "Solid Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#F2E8D2",
+      "visible_if": "{{ block.settings.bg_type == 'color' }}"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_gradient",
+      "label": "Background Gradient",
+      "visible_if": "{{ block.settings.bg_type == 'gradient' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Desktop Background Image",
+      "visible_if": "{{ block.settings.bg_type == 'image' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Mobile Background Image",
+      "visible_if": "{{ block.settings.bg_type == 'image' }}"
+    },
+    {
+      "type": "header",
+      "content": "SECTION SPACING"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Desktop Top Padding",
+      "min": 0,
+      "max": 128,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Desktop Bottom Padding",
+      "min": 0,
+      "max": 128,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile Top Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile Bottom Padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nw-banner-box",
+      "name": "Banner",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "header",
+          "content": "BANNER BACKGROUND"
+        },
+        {
+          "type": "select",
+          "id": "bg_type",
+          "label": "Background Type",
+          "default": "image",
+          "options": [
+            {
+              "value": "none",
+              "label": "None (Transparent)"
+            },
+            {
+              "value": "color",
+              "label": "Solid Color"
+            },
+            {
+              "value": "gradient",
+              "label": "Gradient"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "#F2E8D2",
+          "visible_if": "{{ block.settings.bg_type == 'color' }}"
+        },
+        {
+          "type": "color_background",
+          "id": "bg_gradient",
+          "label": "Background Gradient",
+          "visible_if": "{{ block.settings.bg_type == 'gradient' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Desktop Background Image",
+          "visible_if": "{{ block.settings.bg_type == 'image' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image_mobile",
+          "label": "Mobile Background Image",
+          "visible_if": "{{ block.settings.bg_type == 'image' }}"
+        },
+        {
+          "type": "header",
+          "content": "BANNER CONTENT"
+        },
+        {
+          "type": "select",
+          "id": "banner_alignment",
+          "default": "Bottom",
+          "label": "Content Vertical Alignment",
+          "options": [
+            {
+              "value": "baseline",
+              "label": "Top"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "Bottom",
+              "label": "end"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "default": "new",
+          "id": "banner_badge",
+          "label": "Badge"
+        },
+        {
+          "type": "color",
+          "id": "badge_color",
+          "default": "#3A2418",
+          "label": "Badge Color"
+        },
+        {
+          "type": "color",
+          "id": "badge_bg_color",
+          "default": "#FCF7EB",
+          "label": "Badge Background"
+        },
+        {
+          "type": "inline_richtext",
+          "default": "BANNER TITLE",
+          "id": "banner_title",
+          "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "banner_title_color",
+          "default": "#FFFFFF",
+          "label": "Title Color"
+        },
+        {
+          "type": "richtext",
+          "default": "<p>The first of it’s kind. The healthiest sunscreen out there.</p>",
+          "label": "Description",
+          "id": "banner_description"
+        },
+        {
+          "type": "color",
+          "id": "banner_desc_color",
+          "default": "#FFFFFF",
+          "label": "Description Color"
+        },
+        {
+          "type": "header",
+          "content": "CTA BUTTON"
+        },
+        {
+          "type": "checkbox",
+          "label": "Show/Hide",
+          "default": false,
+          "id": "show-hide-btn"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Label",
+          "default": "see more love",
+          "visible_if": "{{ block.settings.show-hide-btn == true }}"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link",
+          "visible_if": "{{ block.settings.show-hide-btn == true }}"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "label": "Button Type",
+          "default": "primary",
+          "options": [
+            {
+              "label": "Primary",
+              "value": "primary"
+            },
+            {
+              "label": "Secondary",
+              "value": "secondary"
+            }
+          ],
+          "visible_if": "{{ block.settings.show-hide-btn == true }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "btn_icon",
+          "label": "Show Button Arrow Icon",
+          "default": true,
+          "visible_if": "{{ block.settings.show-hide-btn == true }}"
+        }
+      ]
+    }
+  ],
+  "tag": "section",
+  "presets": [
+    {
+      "name": "NW Duo Banner",
+      "category": "NW SECTIONS",
+      "blocks": [
+         {
+            "type": "nw-banner-box"
+         },
+         {
+            "type": "nw-banner-box"
+         }
+      ]
+    }
+  ]
+}
+{% endschema %}
