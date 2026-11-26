@@ -506,3 +506,284 @@
     }
   }
 }
+
+/* ==========================================================================
+   Custom Balm Beach Footer Layout & Color Overrides
+   ========================================================================== */
+
+.footer {
+  background: var(--footer-bg, #122038);
+  color: var(--footer-text, #FFFEFA);
+  border-top: none;
+}
+
+.footer__content-top {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+  padding-bottom: 3.2rem;
+}
+
+.footer-block--newsletter {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 0;
+  gap: 2rem;
+}
+
+.footer-block__newsletter {
+  width: 100%;
+  text-align: left;
+  flex-grow: 0;
+}
+
+.footer-block__newsletter .footer-block__heading {
+  color: var(--footer-newsletter-heading, #FFFEFA);
+  font-size: 1.5rem;
+  line-height: 1.35;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.footer__newsletter.newsletter-form {
+  max-width: 100%;
+  margin: 0;
+  align-items: flex-start;
+}
+
+.footer__newsletter .newsletter-form__field-wrapper {
+  max-width: 100%;
+  width: 100%;
+}
+
+.footer__newsletter-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.footer__newsletter-group .field {
+  flex: 1 1 auto;
+  margin: 0;
+  background: transparent;
+}
+
+.footer__newsletter-group .field::before,
+.footer__newsletter-group .field::after {
+  display: none;
+}
+
+.footer__newsletter-group .field__input {
+  height: 4.4rem;
+  min-height: 4.4rem;
+  padding: 1rem 1.4rem;
+  background: transparent;
+  color: var(--footer-text, #FFFEFA);
+  border: 1px solid color-mix(in srgb, var(--footer-muted, #A3ABB8) 45%, transparent);
+  border-right: none;
+  border-radius: 0;
+  font-size: 1.3rem;
+  box-shadow: none;
+}
+
+.footer__newsletter-group .field__input::placeholder {
+  color: var(--footer-muted, #A3ABB8);
+  opacity: 1;
+}
+
+.footer__newsletter-group .field__input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--footer-text, #FFFEFA);
+}
+
+.footer__newsletter-submit {
+  flex: 0 0 auto;
+  height: 4.4rem;
+  padding: 0 2.2rem;
+  background-color: var(--footer-btn-bg, #F6B83B);
+  color: var(--footer-btn-text, #122038);
+  border: none;
+  border-radius: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.footer__newsletter-submit:hover {
+  opacity: 0.9;
+}
+
+.footer-block--newsletter .footer__list-social.list-social {
+  justify-content: flex-start;
+  margin-top: 0;
+  gap: 1.8rem;
+}
+
+.footer .list-social__link {
+  padding: 0.4rem 0;
+  color: var(--footer-text, #FFFEFA);
+}
+
+.footer .list-social__link .svg-wrapper,
+.footer .list-social__link svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--footer-text, #FFFEFA);
+}
+
+.footer .footer__blocks-wrapper.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3.2rem 2.4rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.footer .footer__blocks-wrapper .footer-block.grid__item {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-block--menu .footer-block__heading {
+  color: var(--footer-menu-heading, #A3ABB8);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+.footer-block--menu .footer-block__details-content {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footer-block--menu .footer-block__details-content > li:not(:last-child) {
+  margin-right: 0;
+}
+
+.footer-block--menu .footer-block__details-content .list-menu__item--link {
+  color: var(--footer-text, #FFFEFA);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  padding: 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer-block--menu .footer-block__details-content .list-menu__item--link:hover {
+  color: var(--footer-text, #FFFEFA);
+  opacity: 0.8;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.footer__content-bottom {
+  border-top: none;
+  padding-top: 0;
+}
+
+.footer__content-bottom .footer__content-bottom-wrapper:last-child {
+  padding-top: 0;
+}
+
+.footer__copyright {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 2rem;
+  border-top: 1px solid color-mix(in srgb, var(--footer-muted, #A3ABB8) 28%, transparent);
+  text-align: left;
+  color: var(--footer-bottom-text, #A3ABB8);
+}
+
+.footer__copyright .copyright__content,
+.footer__copyright .copyright__content a {
+  color: var(--footer-bottom-text, #A3ABB8);
+  font-size: 1.2rem;
+}
+
+.footer__copyright .policies {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__copyright .policies li::before {
+  display: none;
+  content: none;
+}
+
+.footer__copyright .policies li a {
+  padding: 0;
+  color: var(--footer-bottom-text, #A3ABB8);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.footer__copyright .policies li a:hover {
+  color: var(--footer-text, #FFFEFA);
+}
+
+@media screen and (max-width: 749px) {
+  .footer__content-top {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .footer__content-bottom .footer__content-bottom-wrapper:last-child {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .footer__content-top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 6rem;
+    padding-bottom: 4.8rem;
+  }
+
+  .footer-block--newsletter {
+    flex: 0 0 36%;
+    max-width: 42rem;
+  }
+
+  .footer-block__newsletter .footer-block__heading {
+    font-size: 1.6rem;
+  }
+
+  .footer .footer__blocks-wrapper.grid {
+    flex: 1 1 auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3.2rem 4rem;
+  }
+
+  .footer__content-bottom-wrapper:not(.footer__content-bottom-wrapper--center) .footer__copyright {
+    text-align: left;
+  }
+}

@@ -13,15 +13,51 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "link_list_FWAM3F": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop&nbsp;",
+            "menu": "shop_footer"
+          }
+        },
+        "link_list_bFGtB4": {
+          "type": "link_list",
+          "settings": {
+            "heading": "the beach&nbsp;",
+            "menu": "the-beach-footer"
+          }
+        },
+        "link_list_UM6DKm": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Service",
+            "menu": "service-footer"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_FWAM3F",
+        "link_list_bFGtB4",
+        "link_list_UM6DKm"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
+        "bg_color": "#122038",
+        "text_color": "#f2e8d2",
+        "newsletter_heading_color": "#F3E8D2",
+        "menu_heading_color": "#999997",
+        "bottom_text_color": "#999997",
+        "muted_text_color": "#F2E8D2",
+        "button_bg_color": "#F0A82C",
+        "button_text_color": "#3A2418",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
+        "newsletter_heading": "subscribe to get 20% off your first order. you won’t regret it.&nbsp;",
+        "enable_follow_on_shop": false,
         "show_social": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "payment_enable": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
         "show_policy": true,
         "margin_top": 0,
         "padding_top": 36,
