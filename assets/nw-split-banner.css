@@ -126,7 +126,8 @@
 }
 
 
-.nw-split-banner.section-template--28096896598125__nw_split_banner_zmTJz6 {
-    padding-top: 0px; 
-     padding-bottom: 0px;
+.nw-split-banner{
+    padding-top: 0px !important; 
+     padding-bottom: 0px !important;
 }
+

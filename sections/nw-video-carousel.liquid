@@ -7,7 +7,10 @@
 <div class="nw-video-carousel section-{{ section.id }}">
   <div class="page-width">
     <div class="nw-video-header">
-      <div class="nw-video-header-rating" aria-label="{{ section.settings.star_rating }} out of 5 stars">
+      <div
+        class="nw-video-header-rating{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        aria-label="{{ section.settings.star_rating }} out of 5 stars"
+      >
         {% for i in (1..section.settings.star_rating) %}
           <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M13.3148 0L16.458 9.67376H26.6296L18.4006 15.6525L21.5438 25.3262L13.3148 19.3475L5.08583 25.3262L8.22902 15.6525L2.76566e-05 9.67376H10.1716L13.3148 0Z"
@@ -15,7 +18,11 @@
           </svg>
         {% endfor %}
       </div>
-      {% render 'nw-section-header' %}
+      {%- assign header_anim_class = '' -%}
+      {%- if settings.animations_reveal_on_scroll -%}
+        {%- assign header_anim_class = 'scroll-trigger animate--slide-in' -%}
+      {%- endif -%}
+      {% render 'nw-section-header', class: header_anim_class %}
     </div>
   </div>
 
@@ -35,7 +42,13 @@
           {% for pass in (1..passes) %}
             {% for block in section.blocks %}
               <div class="swiper-slide nw-video-carousel__slide"{% if pass == 1 %} {{ block.shopify_attributes }}{% endif %}>
-                <div class="nw-video-carousel__media">
+                <div
+                  class="nw-video-carousel__media{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
                   {% if block.settings.slider_video != blank %}
                     {% if block.settings.slider_thumb != blank %}
                       {% assign poster_url = block.settings.slider_thumb | image_url: width: 800 %}
