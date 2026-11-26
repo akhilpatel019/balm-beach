@@ -1,0 +1,144 @@
+/* ========================================================
+   NW Location Table Section Layout Styles
+   ======================================================== */
+
+/* --------------------------------------------------------
+   1. Base Styles (Mobile First)
+   -------------------------------------------------------- */
+.nw-location-table {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nw-location-table .nw-section-header {
+  margin-bottom: 24px;
+}
+
+.nw-location-table__list {
+  width: 100%;
+  border-top: 1px solid #DCC9A0;
+}
+
+.nw-location-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 0;
+    border-bottom: 1px solid #DCC9A0;
+    text-align: left;
+}
+
+.nw-location-row__city {
+    font-family: var(--font-heading-family);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--espresso-dark, #2c1a0e);
+}
+
+.nw-location-row__date {
+    font-family: var(--font-body-family);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 2.16px;
+    text-transform: uppercase;
+    color: #5C4232;
+    opacity: .85;
+}
+
+.nw-location-row__venue {
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #5C4232;
+  letter-spacing: 0;
+      opacity: .85;
+}
+
+.nw-location-row__action {
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.nw-location-row__link {
+    display: inline-block;
+    font-family: var(--font-body-family);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 2.16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--espresso-dark, #2c1a0e);
+    padding-bottom: 8px;
+    border-bottom: 1px solid currentColor;
+    transition: opacity .2s ease;
+}
+
+.nw-location-row__link:hover {
+  opacity: 0.65;
+}
+
+.nw-location-table__cta {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+
+
+  .nw-location-table .nw-section-header {
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* --------------------------------------------------------
+   2. Tablet (750px and above)
+   -------------------------------------------------------- */
+@media screen and (min-width: 750px) {
+  .nw-location-table .nw-section-header {
+    margin-bottom: 32px;
+  }
+
+  .nw-location-row {
+    grid-template-columns: 1.4fr 1fr 1.4fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 0;
+  }
+
+  
+  .nw-location-row__action {
+    margin-top: 0;
+    justify-self: end;
+  }
+
+  .nw-location-table__cta {
+    margin-top: 32px;
+  }
+
+  
+}
+
+/* --------------------------------------------------------
+   3. Desktop (990px and above)
+   -------------------------------------------------------- */
+@media screen and (min-width: 990px) {
+  .nw-location-row {
+    grid-template-columns: 1.5fr 1fr 1.6fr auto;
+    gap: 32px;
+    padding: 25px 0;
+  }
+
+  .nw-location-table .nw-section-heading{
+   font-size: 52px;
+}
+
+
+
+}

@@ -306,9 +306,9 @@
         "heading": "A beach day for your skin.&nbsp;",
         "description": "<p>Grass-fed beef tallow delivers skin-compatible fats while methylene blue helps defend against everyday environmental stress while supporting a healthy, vibrant appearance. Together, they create a rich balm that hydrates, soothes, and promotes resilient-looking skin... and no, it won't turn your skin blue.</p>",
         "header_alignment": "left",
-        "eyebrow_color": "#FFFEFA",
-        "heading_color": "#FFFEFA",
-        "description_color": "#FFFEFA",
+        "eyebrow_color": "#fffefa",
+        "heading_color": "#fffefa",
+        "description_color": "#fffefa",
         "show-hide-btn": true,
         "button_text": "Shop balm beach blue",
         "button_link": "",
@@ -317,10 +317,72 @@
         "banner_image_desktop": "shopify://shop_images/Div_block-richtext_-Photoroom.png",
         "banner_image_mobile": "shopify://shop_images/Balm_Blue_1-Photoroom.png",
         "bg_type": "image",
-        "bg_color": "#3A2418",
+        "bg_color": "#3a2418",
         "bg_gradient": "",
         "bg_image": "shopify://shop_images/Section_shopify-section-template--21672507539503__main_card_split_p3XmC6_2.webp",
         "bg_image_mobile": "shopify://shop_images/Section_shopify-section-template--21672507539503__main_card_split_p3XmC6_1.webp",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "nw_location_table_N7fCAz": {
+      "type": "nw-location-table",
+      "blocks": {
+        "nw_location_row_rEXDAQ": {
+          "type": "nw-location-row",
+          "settings": {
+            "title": "Austin, TX&nbsp;",
+            "event_date": "Sat · Jun 7&nbsp;",
+            "event_venue": "South Congress Pop-up",
+            "event_registration_url": "",
+            "event_registration_label": "RSVP"
+          }
+        },
+        "nw_location_row_QWTqz9": {
+          "type": "nw-location-row",
+          "settings": {
+            "title": "South hampton, ny",
+            "event_date": "Sat · Jun 7",
+            "event_venue": "The Sentinel Lawn&nbsp;",
+            "event_registration_url": "",
+            "event_registration_label": "RSVP"
+          }
+        },
+        "nw_location_row_ByVDGh": {
+          "type": "nw-location-row",
+          "settings": {
+            "title": "Brooklyn, NY&nbsp;",
+            "event_date": "Sun · Aug 3&nbsp;",
+            "event_venue": "Smorgasburg&nbsp;",
+            "event_registration_url": "",
+            "event_registration_label": "RSVP"
+          }
+        }
+      },
+      "block_order": [
+        "nw_location_row_rEXDAQ",
+        "nw_location_row_QWTqz9",
+        "nw_location_row_ByVDGh"
+      ],
+      "name": "NW Location Table",
+      "settings": {
+        "eyebrow": "come find us in the wild",
+        "heading": "we’re always on the move.&nbsp;",
+        "description": "",
+        "header_alignment": "left",
+        "eyebrow_color": "#D88A14",
+        "heading_color": "#3A2418",
+        "description_color": "#3A2418",
+        "show-hide-btn": true,
+        "button_text": "find more events",
+        "button_link": "",
+        "button_type": "secondary",
+        "btn_icon": true,
+        "bg_type": "color",
+        "bg_color": "#F2E8D2",
+        "bg_gradient": "",
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60,
         "padding_top_mobile": 40,
@@ -335,6 +397,7 @@
     "nw_logo_carousel_QYTztD",
     "nw_video_carousel_M3njen",
     "nw_duo_banner_mKED3h",
-    "nw_image_banner_NnYrEU"
+    "nw_image_banner_NnYrEU",
+    "nw_location_table_N7fCAz"
   ]
 }
