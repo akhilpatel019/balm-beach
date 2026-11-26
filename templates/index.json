@@ -29,6 +29,7 @@
         "button_link": "shopify://collections",
         "button_type": "primary",
         "btn_icon": true,
+        "button_alignment": "left",
         "height_type": "fill",
         "fixed_height": 1000,
         "bg_type": "image",
@@ -62,6 +63,7 @@
         "button_link": "shopify://collections/balm-beach",
         "button_type": "primary",
         "btn_icon": true,
+        "button_alignment": "center",
         "bg_type": "color",
         "bg_color": "#f2e8d2",
         "bg_gradient": "",
@@ -89,6 +91,7 @@
         "button_link": "",
         "button_type": "secondary",
         "btn_icon": false,
+        "button_alignment": "left",
         "padding_top_desktop_banner": 80,
         "padding_bottom_desktop_banner": 80,
         "padding_top_mobile_banner": 48,
@@ -226,6 +229,7 @@
         "button_link": "",
         "button_type": "secondary",
         "btn_icon": true,
+        "button_alignment": "center",
         "bg_type": "color",
         "bg_color": "#f2e8d2",
         "bg_gradient": "",
@@ -257,7 +261,8 @@
             "button_text": "stock your bag",
             "button_link": "shopify://collections/balm-beach",
             "button_type": "primary",
-            "btn_icon": true
+            "btn_icon": true,
+            "button_alignment": "left"
           }
         },
         "nw_banner_box_DATA8h": {
@@ -279,7 +284,8 @@
             "button_text": "Shop the bundle",
             "button_link": "",
             "button_type": "primary",
-            "btn_icon": true
+            "btn_icon": true,
+            "button_alignment": "left"
           }
         }
       },
@@ -314,6 +320,7 @@
         "button_link": "",
         "button_type": "primary",
         "btn_icon": true,
+        "button_alignment": "left",
         "banner_image_desktop": "shopify://shop_images/Div_block-richtext_-Photoroom.png",
         "banner_image_mobile": "shopify://shop_images/Balm_Blue_1-Photoroom.png",
         "bg_type": "image",
@@ -372,21 +379,53 @@
         "heading": "we’re always on the move.&nbsp;",
         "description": "",
         "header_alignment": "left",
-        "eyebrow_color": "#D88A14",
-        "heading_color": "#3A2418",
-        "description_color": "#3A2418",
+        "eyebrow_color": "#d88a14",
+        "heading_color": "#3a2418",
+        "description_color": "#3a2418",
         "show-hide-btn": true,
         "button_text": "find more events",
         "button_link": "",
         "button_type": "secondary",
         "btn_icon": true,
+        "button_alignment": "left",
         "bg_type": "color",
-        "bg_color": "#F2E8D2",
+        "bg_color": "#f2e8d2",
         "bg_gradient": "",
-        "padding_top_desktop": 60,
-        "padding_bottom_desktop": 60,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40
+        "padding_top_desktop": 72,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "nw_rich_text_nWYU9B": {
+      "type": "nw-rich-text",
+      "name": "NW Rich Text",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Find your match & save 20% off",
+        "description": "<p>Keep your skin soft & glowing everyday. &nbsp; We know it’s important in your routine.</p>",
+        "header_alignment": "center",
+        "eyebrow_color": "#fffefa",
+        "heading_color": "#fffefa",
+        "description_color": "#fffefa",
+        "show-hide-btn": true,
+        "button_text": "Shop & save 20%",
+        "button_link": "",
+        "button_type": "primary",
+        "btn_icon": true,
+        "button_alignment": "center",
+        "overlay_enabled": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "bg_type": "image",
+        "bg_color": "#000000",
+        "bg_gradient": "",
+        "bg_image": "shopify://shop_images/Section.jpg",
+        "bg_image_mobile": "shopify://shop_images/Section_f1dd3d8b-2d64-4091-a1fd-bc7aba2d1272.jpg",
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80
       }
     }
   },
@@ -398,6 +437,7 @@
     "nw_video_carousel_M3njen",
     "nw_duo_banner_mKED3h",
     "nw_image_banner_NnYrEU",
-    "nw_location_table_N7fCAz"
+    "nw_location_table_N7fCAz",
+    "nw_rich_text_nWYU9B"
   ]
 }
