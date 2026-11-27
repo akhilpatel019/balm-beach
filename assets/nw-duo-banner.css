@@ -41,6 +41,24 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .nw-banner-box:hover .nw-banner-box__bg-img {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nw-banner-box__bg-img {
+    transition: none;
+  }
+
+  .nw-banner-box:hover .nw-banner-box__bg-img {
+    transform: none;
+  }
 }
 
 .nw-banner-box__bg-img--placeholder {
